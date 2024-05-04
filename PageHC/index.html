@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="icon" href="assets/media/logo.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HAPPY_COSTUMER</title>
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+<body>
+    <!--====================NAVEGACIÓN======================-->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="happy-outline"></ion-icon>
+                        </span>
+                        <span class="tittle">Happy Costumers</span>
+                    </a>
+                </li>
+                <li class="hovered">
+                    <a href="index.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="tittle">Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Facturacion.html">
+                        <span class="icon">
+                            <ion-icon name="cart-outline"></ion-icon>
+                        </span>
+                        <span class="tittle">Facturación</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="inventario.html">
+                        <span class="icon">
+                            <ion-icon name="cube-outline"></ion-icon>
+                        </span>
+                        <span class="tittle">Inventario</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="bar-chart-outline"></ion-icon>
+                        </span>
+                        <span class="tittle">Reportes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="proveedores.html">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="tittle">Proveedores</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--====================MAIN======================-->
+
+    <div class="main">
+        <div class="topbar">
+            <div class="toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+            <div class="search">
+                <label>
+                    <input type="text" placeholder="Busqueda">
+                    <ion-icon name="search-outline"></ion-icon>
+                </label>
+            </div>
+            <div class="user">
+                <img src="./assets/media/customer01.jpg" alt="">
+            </div>
+        </div>
+
+        <!--====================CARDS======================-->
+
+        <div class="cardBox">
+            <div class="card">
+                <div>
+                    <div class="numbers">227</div>
+                    <div class="cardName">Cantidad por empaquetar</div>
+                </div>
+                <div class="iconBX">
+                    <ion-icon name="file-tray-stacked-outline"></ion-icon>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="numbers">7</div>
+                    <div class="cardName">Paquetes por enviar</div>
+                </div>
+                <div class="iconBX">
+                    <ion-icon name="cart-outline"></ion-icon>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="numbers">10</div>
+                    <div class="cardName">Paquetes por entregar</div>
+                </div>
+                <div class="iconBX">
+                    <ion-icon name="bus-outline"></ion-icon>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="numbers">30610</div>
+                    <div class="cardName">Cantidad por facturar</div>
+                </div>
+                <div class="iconBX">
+                    <ion-icon name="receipt-outline"></ion-icon>
+                </div>
+            </div>
+        </div> 
+
+        <!--====================ORDER DETAILS======================-->
+
+        <div class="details">
+            <div class="recentOrders">
+                <div class="cardHeader">
+                    <h2>Ordenes recientes</h2>
+                    <a href="reportes.html" class="btn">Ver todo</a>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Nombre</td>
+                            <td>Precio</td>
+                            <td>Pago</td>
+                            <td>Estado</td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Refrigerador</td>
+                            <td>$1200</td>
+                            <td>Realizado</td>
+                            <td><span class="status delivered">Entregado</span></td>
+                        </tr>
+                        <tr>
+                            <td>Dell laptop</td>
+                            <td>$120</td>
+                            <td>Pendiente</td>
+                            <td><span class="status pending">Pendiente</span></td>
+                        </tr>
+                        <tr>
+                            <td>Apple Watch</td>
+                            <td>$1200</td>
+                            <td>Realizado</td>
+                            <td><span class="status return">Devuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td>Addidas shoes</td>
+                            <td>$620</td>
+                            <td>Pendiente</td>
+                            <td><span class="status inProgress">En progreso</span></td>
+                        </tr>
+                        <tr>
+                            <td>Refrigerador</td>
+                            <td>$1200</td>
+                            <td>Realizado</td>
+                            <td><span class="status delivered">Entregado</span></td>
+                        </tr>
+                        <tr>
+                            <td>Dell laptop</td>
+                            <td>$120</td>
+                            <td>Pendiente</td>
+                            <td><span class="status pending">Pendiente</span></td>
+                        </tr>
+                        <tr>
+                            <td>Apple Watch</td>
+                            <td>$1200</td>
+                            <td>Realizado</td>
+                            <td><span class="status return">Devuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td>Addidas shoes</td>
+                            <td>$620</td>
+                            <td>Pendiente</td>
+                            <td><span class="status inProgress">En progreso</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!--====================NEW COSTUMERS======================-->
+
+            <div class="recentCostumers">
+                <div class="cardHeader">
+                    <h2>Clientes recientes</h2>
+                </div>
+
+                <table>
+                    <tr>
+                        <td width="60px">
+                            <div class="imgBX"> 
+                                <img src="./assets/media/customer02.jpg" alt=""></img>
+                            </div>
+                        </td>
+                        <td>
+                            <h4>David <br><span>Italy</span></h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="60px">
+                            <div class="imgBX"> 
+                                <img src="./assets/media/customer01.jpg" alt=""></img>
+                            </div>
+                        </td>
+                        <td>
+                            <h4>David <br><span>Italy</span></h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="60px">
+                            <div class="imgBX"> 
+                                <img src="./assets/media/customer02.jpg" alt=""></img>
+                            </div>
+                        </td>
+                        <td>
+                            <h4>David <br><span>Italy</span></h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="60px">
+                            <div class="imgBX"> 
+                                <img src="./assets/media/customer01.jpg" alt=""></img>
+                            </div>
+                        </td>
+                        <td>
+                            <h4>David <br><span>Italy</span></h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="60px">
+                            <div class="imgBX"> 
+                                <img src="./assets/media/customer02.jpg" alt=""></img>
+                            </div>
+                        </td>
+                        <td>
+                            <h4>David <br><span>Italy</span></h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="60px">
+                            <div class="imgBX"> 
+                                <img src="./assets/media/customer01.jpg" alt=""></img>
+                            </div>
+                        </td>
+                        <td>
+                            <h4>David <br><span>Italy</span></h4>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <!--====================SCRIPTS======================-->
+    <script src="./assets/js/main.js"></script>
+
+    <!--====================IONICONS======================-->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

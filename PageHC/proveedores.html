@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="assets/media/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPPY_COSTUMER</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.dataTables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
+    <!--====================STYLES======================-->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <!--====================NAVEGACIÓN======================-->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="happy-outline"></ion-icon>
+                        </span>
+                        <span class="tittle">Happy Costumers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="tittle">Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Facturacion.html">
+                        <span class="icon">
+                            <ion-icon name="cart-outline"></ion-icon>
+                        </span>
+                        <span class="tittle">Facturación</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="inventario.html">
+                        <span class="icon">
+                            <ion-icon name="cube-outline"></ion-icon>
+                        </span>
+                        <span class="tittle">Inventario</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="reportes.html">
+                        <span class="icon">
+                            <ion-icon name="bar-chart-outline"></ion-icon>
+                        </span>
+                        <span class="tittle">Reportes</span>
+                    </a>
+                </li>
+                <li class="hovered">
+                    <a href="proveedores.html">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="tittle">Proveedores</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--====================MAIN======================-->
+
+    <div class="main">
+        <div class="topbar">
+            <div class="toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+            <div class="search">
+                <label>
+                    <input type="text" placeholder="Busqueda">
+                    <ion-icon name="search-outline"></ion-icon>
+                </label>
+            </div>
+            <div class="user">
+                <img src="./assets/media/customer01.jpg" alt="">
+            </div>
+        </div>
+
+        <!--====================INVENTARIO======================-->
+
+        <div class="details" style="display: flex; justify-content: space-between;">
+            <div class="recentOrders" style="flex: 1; margin-right: 20px;">
+                <div class="cardHeader">
+                    <h2>Proveedores</h2>
+                </div>
+                <table id="example" class="display nowrap dt-responsive" style="width:100%">
+                    <thead>
+                        <tr>
+                            <td>Nombre</td>
+                            <td>Contacto</td>
+                            <td>RUT</td>
+                            <td>Dirección</td>
+                            <td>Tipo de producto</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Suministros Papel S.A.S</td>
+                            <td>+ 57 1234567</td>
+                            <td>900123456-7</td>
+                            <td>Carrera 10 #25-45, Bogotá</td>
+                            <td>Papelería</td>
+                        </tr>
+                        <tr>
+                            <td>Limpieza total Ltda</td>
+                            <td>+57 4345678</td>
+                            <td>800987654-3</td>
+                            <td>Calle 50 #15-30, Medellín</td>
+                            <td>Limpieza</td>
+                        </tr>
+                        <tr>
+                            <td>Tecnología Avanzada S.A</td>
+                            <td>+57 2456789</td>
+                            <td>700654321-8</td>
+                            <td>Avenida 7 #40-12, Cali</td>
+                            <td>Computación</td>
+                        </tr>
+                        <tr>
+                            <td>Alimentos Deliciosos S.A.S</td>
+                            <td>+57 5567901</td>
+                            <td>600234567-9</td>
+                            <td>Calle 20 #5-15, Barranquilla</td>
+                            <td>Comestibles</td>
+                        </tr>
+                        <tr>
+                            <td>Alimentos Deliciosos S.A.S</td>
+                            <td>+57 5567901</td>
+                            <td>600234567-9</td>
+                            <td>Calle 20 #5-15, Barranquilla</td>
+                            <td>Comestibles</td>
+                        </tr>
+                        <tr>
+                            <td>Alimentos Deliciosos S.A.S</td>
+                            <td>+57 5567901</td>
+                            <td>600234567-9</td>
+                            <td>Calle 20 #5-15, Barranquilla</td>
+                            <td>Comestibles</td>
+                        </tr>
+                        <tr>
+                            <td>Alimentos Deliciosos S.A.S</td>
+                            <td>+57 5567901</td>
+                            <td>600234567-9</td>
+                            <td>Calle 20 #5-15, Barranquilla</td>
+                            <td>Comestibles</td>
+                        </tr>
+                        <tr>
+                            <td>Alimentos Deliciosos S.A.S</td>
+                            <td>+57 5567901</td>
+                            <td>600234567-9</td>
+                            <td>Calle 20 #5-15, Barranquilla</td>
+                            <td>Comestibles</td>
+                        </tr>
+                        <tr>
+                            <td>Alimentos Deliciosos S.A.S</td>
+                            <td>+57 5567901</td>
+                            <td>600234567-9</td>
+                            <td>Calle 20 #5-15, Barranquilla</td>
+                            <td>Comestibles</td>
+                        </tr>
+                        <tr>
+                            <td>Alimentos Deliciosos S.A.S</td>
+                            <td>+57 5567901</td>
+                            <td>600234567-9</td>
+                            <td>Calle 20 #5-15, Barranquilla</td>
+                            <td>Comestibles</td>
+                        </tr>
+                        <tr>
+                            <td>Alimentos Deliciosos S.A.S</td>
+                            <td>+57 5567901</td>
+                            <td>600234567-9</td>
+                            <td>Calle 20 #5-15, Barranquilla</td>
+                            <td>Comestibles</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="button">
+                    <a href="insertarProveedor.html" class="btn">
+                        <span class="icon">
+                            <ion-icon name="file-tray-outline"></ion-icon>
+                        </span>
+                        Insertar proveedor
+                    </a>
+                    <a href="modificarProveedor.html" class="btn">
+                        <span class="icon">
+                            <ion-icon name="pencil-outline"></ion-icon>
+                        Modificar proveedor
+                    </a>
+                    <a href="eliminarProveedor.html" class="btn">
+                        <span class="icon">
+                            <ion-icon name="trash-outline"></ion-icon>
+                        </span>
+                        Eliminar proveedor
+                    </a>
+                </div>
+            
+            </div>
+        </div>
+        
+        <script>
+        $(document).ready(function() {
+            $('#example').DataTable({
+                responsive: true,
+                lengthMenu: [ [5, 10, 15, -1], [5, 10, 15, "Todos"] ]
+            });
+        });
+        </script>
+        
+            <!--====================NUEVOS PRODUCTOS======================-->
+
+            <div class="recentCostumers" style="flex: 1;">
+                <div class="cardHeader">
+                    <h2>Proveedores recientes</h2>
+                </div>
+
+                <table>
+                    <tr>
+                        <td width="60px">
+                            <div class="imgBX"> 
+                                <img src="./assets/media/customer02.jpg" alt=""></img>
+                            </div>
+                        </td>
+                        <td>
+                            <h4>Suministros papel <br><span>Bogotá</span></h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="60px">
+                            <div class="imgBX"> 
+                                <img src="./assets/media/customer01.jpg" alt=""></img>
+                            </div>
+                        </td>
+                        <td>
+                            <h4>Tecnologia avanzada<br><span>Cali</span></h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="60px">
+                            <div class="imgBX"> 
+                                <img src="./assets/media/customer02.jpg" alt=""></img>
+                            </div>
+                        </td>
+                        <td>
+                            <h4>Suministros papel <br><span>Bogotá</span></h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="60px">
+                            <div class="imgBX"> 
+                                <img src="./assets/media/customer01.jpg" alt=""></img>
+                            </div>
+                        </td>
+                        <td>
+                            <h4>Tecnologia avanzada<br><span>Cali</span></h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="60px">
+                            <div class="imgBX"> 
+                                <img src="./assets/media/customer02.jpg" alt=""></img>
+                            </div>
+                        </td>
+                        <td>
+                            <h4>Suministros papel <br><span>Bogotá</span></h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="60px">
+                            <div class="imgBX"> 
+                                <img src="./assets/media/customer01.jpg" alt=""></img>
+                            </div>
+                        </td>
+                        <td>
+                            <h4>Tecnologia avanzada<br><span>Cali</span></h4>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!--====================SCRIPTS======================-->
+    <script src="./assets/js/main.js"></script>
+
+    <!--====================IONICONS======================-->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
