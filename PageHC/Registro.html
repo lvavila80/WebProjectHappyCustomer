@@ -4,64 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.css">
-
+    <link rel="stylesheet" href="./assets/css/styleRegister.css">
     <title>Registro - Happy Customer</title>
-
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid register-page">
         <div class="row no-gutters">
             <div class="col-lg-6 form-section d-flex flex-column justify-content-center">
                 <center>
                     <h1>¡Bienvenido!</h1>
                     <h2>Happy Customer</h2>
                     <h3>Elevate Your Shopping Experience</h3>
-                
-                <section>
-            
+
+                    <section>
+                        <h4>Queremos que usando Happy Customer potencies tu negocio y obtengas mejores resultados</h4>
+                        <h5>Para comenzar a usar nuestra herramienta, completa el formulario de registro</h5>
+                    </section>
                 </center>
 
                 <div class="container-fluid">
-                    <form method="POST">
+                    <form method="POST" id="formRegistro">
                         <div class="form-group">
                             <input type="text" id="nombre" name="nombre" class="form-control input-field" placeholder="Nombre*" required onpaste="return false">
+                            <span class="error-message">Es necesario que indiques tu nombre.</span>
                         </div>
 
                         <div class="form-group">
                             <input type="email" id="correo" name="correo" class="form-control input-field" placeholder="Correo electrónico*" required onpaste="return false">
+                            <span class="error-message">Es necesario que indiques tu correo electrónico.</span>
                         </div>
 
                         <div class="form-group">
-                            <input type="email" id="confirmar-correo" name="confirmar-correo" class="form-control input-field" placeholder="Confirmar correo electrónico*">
+                            <input type="email" id="confirmar-correo" name="confirmar-correo" class="form-control input-field" placeholder="Confirmar correo electrónico*" required onpaste="return false">
+                            <span class="error-message">El correo electrónico no coincide.</span>
                         </div>
-                        
+
                         <div class="form-group">
                             <input type="password" id="contrasena" name="contrasena" class="form-control input-field" placeholder="Contraseña*" required>
+                            <span class="error-message">Es necesario que crees una contraseña.</span>
                         </div>
-                        
+
                         <div class="form-group">
-                            <input type="tel" id="celular" name="celular" class="form-control input-field" placeholder="Celular" >
+                            <input type="tel" id="celular" name="celular" class="form-control input-field" placeholder="Celular">
                         </div>
-                        
+
                         <div class="form-group form-check">
                             <label class="form-check-label" for="terminos">
                                 <input type="checkbox" id="terminos" name="terminos" class="form-check-input">
                                 Acepta nuestros términos y condiciones
                             </label>
                         </div>
-                        
-                        <button type="submit" class="btn submit-button" id="submitBtn" disabled>¡Regístrate!</button>
+                        <button type="submit" class="btn submit-button">¡Regístrate!</button>
                     </form>
                 </div>
-                
             </div>
 
             <div class="col-lg-6 image-section d-flex flex-column justify-content-center">
                 <figure>
-                    <img src="media/register.svg" alt="Imagen de registro" class="img-fluid">
-                </figure>              
+                    <img src="https://media.istockphoto.com/id/1278695302/es/vector/contabilidad-finanzas-datos-bancarios-peque%C3%B1os-personajes-contables-alrededor-de-enormes.jpg?s=612x612&w=0&k=20&c=Z3Z22cuP75v9W-aojeykALGNoQI2XPiLS4peONAuWo0=" alt="Imagen de registro" class="img-fluid">
+                </figure>
                 <h5>¿Ya estás registrado?</h5>
                 <button type="button" class="btn login-button">Iniciar sesión</button>
             </div>
@@ -70,7 +72,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="assets/js/register.js"></script>
-
+    <script src="./assets/js/register.js"></script>
 </body>
 </html>
+
+

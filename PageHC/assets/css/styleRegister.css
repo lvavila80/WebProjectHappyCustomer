@@ -1,0 +1,110 @@
+/* Establece el color de fondo y asegura que no hay márgenes ni padding innecesarios en todo el documento */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;  /* Establece la altura completa de la página */
+    width: 100%;   /* Establece el ancho completo de la página */
+    overflow-x: hidden;  /* Oculta cualquier desbordamiento horizontal */
+    background-color: #f4f4f4;  /* Color de fondo general */
+}
+
+/* Ajustes para el contenedor principal y las filas para evitar desbordamientos */
+.container-fluid, .row {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;  /* Previene desbordamientos inesperados */
+}
+
+/* Estilos específicos para la sección del formulario y la imagen, asegurando que cubran la altura completa */
+.register-page .form-section, .register-page .image-section {
+    padding: 30px;
+    margin: 0;
+    min-height: 100vh;  /* Establece la altura mínima para cubrir la pantalla */
+    box-sizing: border-box;  /* Incluye el padding y border en el ancho y alto */
+}
+
+/* Estilos para la sección del formulario */
+.register-page .form-section {
+    background-color: #6a994e;  /* Fondo verde oscuro para la sección del formulario */
+    color: white;  /* Texto en color blanco */
+}
+
+/* Estilos para la sección de la imagen */
+.register-page .image-section {
+    background-color: white;  /* Fondo blanco para la sección de imagen */
+    text-align: center;  /* Alinea el texto al centro */
+}
+
+/* Asegura que las imágenes no excedan el ancho de su contenedor */
+.register-page .image-section img {
+    max-width: 100%;  /* Máximo ancho del 100% */
+    height: auto;  /* Altura automática para mantener la proporción */
+}
+
+/* Estilos para los campos de entrada */
+.register-page .input-field {
+    border: 1px solid #ccc;  /* Borde gris claro */
+    border-radius: 25px;  /* Bordes redondeados */
+    width: 100%;  /* Uso completo del ancho disponible */
+    margin-bottom: 15px;  /* Margen inferior para separación */
+    padding: 10px;  /* Padding interno */
+    box-sizing: border-box;  /* Incluye padding y border en el cálculo del ancho */
+}
+
+/* Estilos para mostrar errores */
+.register-page .input-field.input-error {
+    border: 1px solid red;  /* Borde rojo para indicar error */
+}
+
+/* Mensajes de error ocultos inicialmente */
+.register-page .error-message {
+    color: #ff0000;  /* Color rojo para mensajes de error */
+    font-size: 0.875em;  /* Tamaño de fuente para los errores */
+    display: none;  /* Ocultos hasta que se activan con JS */
+}
+
+/* Botones de submit y login */
+.register-page .submit-button, .register-page .login-button {
+    background-color: #606460;  /* Fondo gris oscuro */
+    color: white;  /* Texto en blanco */
+    border: none;  /* Sin borde */
+    border-radius: 25px;  /* Bordes redondeados */
+    padding: 10px 20px;  /* Padding interno */
+    margin-top: 15px;  /* Margen superior */
+    cursor: pointer;  /* Cursor de puntero para indicar interactividad */
+    width: 40%;  /* Ancho del 40% del contenedor */
+    display: block;  /* Display block para centrar */
+    margin-left: auto;  /* Auto márgenes para centrar horizontalmente */
+    margin-right: auto;  /* Auto márgenes para centrar horizontalmente */
+}
+
+/* Hover para el botón de login */
+.register-page .login-button:hover {
+    background-color: #b9bec4;  /* Fondo gris claro en hover */
+    color: #ffffff;  /* Texto blanco en hover */
+}
+
+/* Estilos para checkboxes */
+.register-page .form-check-input {
+    width: 20px;  /* Ancho fijo */
+    height: 20px;  /* Altura fija */
+    margin-right: 5px;  /* Margen derecho */
+}
+
+.register-page .form-check-label {
+    margin-left: 5px;  /* Margen izquierdo */
+}
+
+/* Ajustes para grupos de formulario */
+.register-page .form-group {
+    margin-right: auto;  /* Centrado automático derecho */
+    margin-left: auto;  /* Centrado automático izquierdo */
+    max-width: 600px;  /* Ancho máximo para los form-groups */
+}
+
+/* Estilos para los encabezados dentro de la página de registro */
+.register-page h1, .register-page h2, .register-page h3, .register-page h4, .register-page h5 {
+    margin-bottom: 20px;  /* Margen inferior para separación entre textos */
+}
+
