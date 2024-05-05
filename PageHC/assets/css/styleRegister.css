@@ -108,3 +108,22 @@ body, html {
     margin-bottom: 20px;  /* Margen inferior para separación entre textos */
 }
 
+.alert {
+    display: none; /* Oculto por defecto */
+    position: absolute; /* Posición absoluta para hacerla flotante */
+    right: 20px; /* Ajustar según la posición deseada */
+    bottom: 10px; /* Distancia desde el fondo del input */
+    background-color: #f8d7da; /* Fondo rojo claro */
+    color: #721c24; /* Texto rojo oscuro */
+    border: 1px solid #f5c6cb; /* Borde rojo */
+    border-radius: 4px; /* Bordes redondeados */
+    padding: 10px; /* Padding interno */
+    width: auto; /* Ancho automático basado en el contenido */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra para mejor visibilidad */
+    z-index: 1000; /* Asegura que la alerta se muestre por encima de otros elementos */
+}
+
+.register-page {
+    overflow: hidden; /* Para contener los bordes dentro del flujo del documento */
+}
+
