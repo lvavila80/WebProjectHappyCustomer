@@ -54,12 +54,12 @@ body, html {
 
 /* Estilos para mostrar errores */
 .register-page .input-field.input-error {
-    border: 1px solid red;  /* Borde rojo para indicar error */
+    border: 1px solid rgb(167, 14, 14);  /* Borde rojo para indicar error */
 }
 
 /* Mensajes de error ocultos inicialmente */
 .register-page .error-message {
-    color: #ff0000;  /* Color rojo para mensajes de error */
+    color: rgb(167, 14, 14);  /* Color rojo para mensajes de error */
     font-size: 0.875em;  /* Tamaño de fuente para los errores */
     display: none;  /* Ocultos hasta que se activan con JS */
 }
