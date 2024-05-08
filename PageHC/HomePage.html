@@ -17,7 +17,14 @@
                 <a href="#acercade">Acerca de</a>
                 <a href="#comofunciona">¿Cómo funciona?</a>
                 <a href="#contacto">Contacto</a>
-                <button onclick="window.location.href='index.html'">LOGIN</button>
+                <button onclick="window.location.href='index.html'">LOGIN</button>     
+                <div class="dropdown">
+                    <button onclick="toggleDropdown()">SIGN IN</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="registro.html?tipo=usuario">Soy Usuario</a>
+                        <a href="Registro.html">Soy Administrador</a>
+                    </div>
+                </div>            
             </nav> 
         </div>
     </header>
@@ -74,5 +81,6 @@
             <p class="cp">Copyright &copy;</p>
         </div>
     </footer>
+    <script src="./assets/js/register.js"></script>
 </body>
 </html>

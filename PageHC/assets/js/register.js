@@ -70,3 +70,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+function toggleDropdown() {
+    var dropdown = document.getElementById("myDropdown");
+    if (dropdown.style.display === "none") {
+        dropdown.style.display = "block";
+    } else {
+        dropdown.style.display = "none";
+    }
+}
+
+// Cerrar el dropdown si se hace clic fuera de él
+window.onclick = function(event) {
+    if (!event.target.matches('.dropdown button')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.style.display === "block") {
+                openDropdown.style.display = "none";
+            }
+        }
+    }
+}
+

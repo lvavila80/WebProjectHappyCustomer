@@ -39,6 +39,83 @@ body{
 }
 /*=====================HOMEPAGE====================*/
 
+/* Estilos adicionales para el botón y el contenido desplegable */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;  /* Ajusta según sea necesario */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: 50%;           /* Centra el menú debajo del botón */
+    transform: translateX(-50%); /* Alineación precisa */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px; /* Reduce el tamaño de la fuente si es necesario */
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd; /* Color más oscuro para mejor contraste */
+    color: #555;            /* Cambio de color de texto en hover */
+}
+
+/* CSS para botón principal para mantener consistencia */
+button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #f3f3f3;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 14px; /* Asegúrate de que el tamaño de la fuente sea consistente */
+}
+
+button:hover {
+    background-color: #e7e7e7; /* Color más oscuro en hover */
+}
+
+
+/* Estilo específico para el contenedor del botón SIGN IN */
+.sign-in-menu {
+    position: relative;
+    display: inline-block; /* Esto garantiza que el contenedor se ajuste al tamaño de su contenido (el botón) */
+}
+
+/* Estilos para el contenido desplegable */
+.dropdown-content {
+    position: absolute;
+    top: 100%; /* Coloca el menú justo debajo del botón SIGN IN */
+    left: 0; /* Alinea el menú con el lado izquierdo del botón */
+    width: 100%; /* Esto hará que el menú tenga el mismo ancho que el botón SIGN IN */
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    display: none; /* Inicialmente oculto */
+    z-index: 1000; /* Asegura que el menú desplegable se muestre sobre otros elementos */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; /* Asegura que cada opción se muestre en su propia línea */
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+
+
 button{
     font-size: 1em;
     font-weight: bold;
