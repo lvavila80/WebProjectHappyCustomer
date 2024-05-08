@@ -12,26 +12,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const hasMinLength = passwordValue.length >= 8;
         const hasUpperCase = /[A-Z]/.test(passwordValue);
         const hasNumbers = /[0-9]/.test(passwordValue);
-
         if (!hasMinLength || !hasUpperCase || !hasNumbers) {
-            contrasena.classList.add('input-error');
             alert('La contraseña debe tener al menos 8 caracteres, incluir una mayúscula y números.');
             return false;
-        } else {
-            contrasena.classList.remove('input-error');
-            return true;
         }
+        return true;
     }
 
     function validatePasswordMatch() {
         if (contrasena.value !== confirmarContrasena.value) {
-            confirmarContrasena.classList.add('input-error');
             alert('Las contraseñas no coinciden.');
             return false;
-        } else {
-            confirmarContrasena.classList.remove('input-error');
-            return true;
         }
+        return true;
     }
 
     form.addEventListener('submit', function(e) {
@@ -61,15 +54,14 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             body: JSON.stringify(usuarioData)
         })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok.');
-            }
-            return response.json();
-        })
+        .then(response => response.json()) // Asegurarse de que siempre se espera un JSON
         .then(data => {
-            alert("Registro completado. Verifique su correo electrónico para confirmar su registro.");
-            form.reset();
+            if (data.success) {
+                alert(data.message);
+                form.reset();
+            } else {
+                throw new Error(data.message);
+            }
         })
         .catch(error => {
             console.error('Error:', error);
@@ -77,4 +69,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
