@@ -90,62 +90,22 @@
             <div class="recentOrders">
                 <div class="cardHeader">
                     <h2>Inventario actual</h2>
-                    <a href="insertarProducto.html" class="btn">Insertar</a>
                 </div>
 
-                <table>
+                <table id="tablaProductos">
                     <thead>
                         <tr>
-                            <td>Código</td>
-                            <td>Nombre</td>
-                            <td>Existencias</td>
-                            <td>Precio de venta</td>
-                            <td>Precio de compra</td>
-                            <td>Proveedor</td>
+                            <th>Artículo</th>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                            <th>Color</th>
+                            <th>Unidades Compradas</th>
+                            <th>Valor por Unidad</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Salchipapas</td>
-                            <td>12</td>
-                            <td><span class="status delivered">$7600</span></td>
-                            <td><span class="status return">$5000</span></td>
-                            <td>Postobon</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Pastel de pollo</td>
-                            <td>5</td>
-                            <td><span class="status delivered">$4000</span></td>
-                            <td><span class="status return">$2000</span></td>
-                            <td>Colanta</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Palito de queso</td>
-                            <td>3</td>
-                            <td><span class="status delivered">$3000</span></td>
-                            <td><span class="status return">$2000</span></td>
-                            <td>Bimbo</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Botella de agua</td>
-                            <td>20</td>
-                            <td><span class="status delivered">$2000</span></td>
-                            <td><span class="status return">$1000</span></td>
-                            <td>Brisa</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Banano</td>
-                            <td>3</td>
-                            <td><span class="status delivered">$1000</span></td>
-                            <td><span class="status return">$700</span></td>
-                            <td>Minorista</td>
-                        </tr>
+                        
 
                     </tbody>
                 </table>
@@ -205,12 +165,31 @@
 
         </div>
 
+        <div class="button">
+            <a href="insertarProducto.html" class="btn">
+                <span class="icon">
+                    <ion-icon name="file-tray-outline"></ion-icon>
+                </span>
+                Insertar producto
+            </a>
+            <a href="modificarProducto.html" class="btn">
+                <span class="icon">
+                    <ion-icon name="pencil-outline"></ion-icon>
+                Modificar producto
+            </a>
+            <a href="eliminarProducto.html" class="btn">
+                <span class="icon">
+                    <ion-icon name="trash-outline"></ion-icon>
+                </span>
+                Eliminar producto
+            </a>
+        </div>
 
 
 
     </div>
 
-    <script></script>
+    <script src="./assets/js/leerProductos.js"></script>
     <!--====================SCRIPTS======================-->
     <script src="./assets/js/main.js"></script>
 
