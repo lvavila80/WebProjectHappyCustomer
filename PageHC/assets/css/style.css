@@ -588,27 +588,11 @@ input:valid {
     border-bottom: none;
 }
 
-.details .recentOrders table tbody tr:hover{
-    background: var(--color);
-    color: var(--white);
-
-}
 
 .details .recentOrders table tr td{
     padding: 10px;
 }
 
-.details .recentOrders table tr td:last-child{
-    text-align: center;
-}
-
-.details .recentOrders table tr td:last-child(2){
-    text-align: end;
-}
-
-.details .recentOrders table tr td:last-child(3){
-    text-align: center;
-}
 
 .status.delivered{
     padding: 2px 4px;
@@ -700,6 +684,10 @@ input:valid {
 
 /*--====================INVENTARIO======================*/
 
+.details .recentOrders #tablaProductos td {
+    padding-left: 80px;
+}
+
 .button{
     display: flex;
     justify-content: center; 
@@ -708,57 +696,29 @@ input:valid {
     padding: 20px; 
 }
 
-.btn {
-    display: flex; 
-    align-items: center; 
-    gap: 10px; 
+.btn-delete, .btn-edit {
     padding: 10px 20px; 
     text-decoration: none; 
-    background-color: var(--color); 
-    color: white; 
+    margin-bottom: 10px;
+    margin-left: 0;
     border-radius: 5px; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+    background-color: var(--gray);
+    color: var(--black1);
 }
 
-.button .btn:nth-child(2) {
-    background-color: #fca311; 
+.btn-edit{
+    background: #e9c46a;
 }
 
-.button .btn:nth-child(3) {
-    background-color: red; 
+.btn-edit:hover,.btn-delete:hover{
+    background: #6a994e;
+    color: #222;
 }
 
-.icon {
-    display: flex;
-    align-items: center;
+.btn-delete{
+    background: #d90429;
 }
 
-.detailsForm{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    width: 100%;
-    padding: 20px;
-    display: grid;
-    grid-gap:30px;
-    margin-top: 10px;
-}
-
-.detailsForm .recentOrders{
-    position: relative;
-    display: grid;
-    min-height: 500px;
-    background: var(--white);
-    padding: 20px;
-    box-shadow: 0 7px 25px rgba(0,0,0,0.8);
-    border-radius: 20px;
-}
-
-.detailsForm .cardHeader{
-    display:flex;
-    justify-content: center;
-    align-items: flex-start;
-}
 
 /*--=====================FORM=====================*/
 

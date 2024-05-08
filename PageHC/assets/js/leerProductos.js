@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-
     const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNTIwMTgyOSwiZXhwIjoxNzE1MjE5ODI5fQ.B75ZnsBseWgm14lSUWAbQHqtSqiHTZQG9iRl-wsqnxw';
 
     function cargarDatos() {
@@ -29,6 +28,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     <td>${articuloInventario.color}</td>
                     <td>${articuloInventario.unidadesdisponibles}</td>
                     <td>${articuloInventario.valorunitario}</td>
+                    <td>
+                        <button class="btn-edit"><ion-icon name="pencil-outline"></ion-icon></button>
+                        <button class="btn-delete"><ion-icon name="trash-outline"></ion-icon></button>
+                    </td>
                 `;
                 tbody.appendChild(tr);
             });
@@ -38,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Error al cargar datos: ' + error.message);
         });
     }
-    
     
     cargarDatos();
 });

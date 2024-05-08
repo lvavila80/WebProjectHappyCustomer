@@ -85,13 +85,19 @@
 
         <!--====================INVENTARIO======================-->
 
-        
-        <div class="details">
-            <div class="recentOrders">
+        <div class="details" style="display: flex; justify-content: space-between;">
+            <div class="recentOrders" style="flex: 1; margin-right: 20px;">
                 <div class="cardHeader">
-                    <h2>Inventario actual</h2>
+                    <h2>Productos</h2>
+                    <div class="button">
+                        <a href="insertarProducto.html" class="btn">
+                            <span class="icon">
+                                <ion-icon name="file-tray-outline"></ion-icon>
+                            </span>
+                            Nuevo producto
+                        </a>
+                    </div>
                 </div>
-
                 <table id="tablaProductos">
                     <thead>
                         <tr>
@@ -101,91 +107,28 @@
                             <th>Color</th>
                             <th>Unidades Compradas</th>
                             <th>Valor por Unidad</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
-
                     <tbody>
-                        
 
                     </tbody>
                 </table>
             </div>
-
-            <!--====================NUEVOS PRODUCTOS======================-->
-
-            <div class="recentCostumers">
-                <div class="cardHeader">
-                    <h2>Productos recientes</h2>
-                </div>
-
-                <table>
-                    <tr>
-                        <td width="60px">
-                            <div class="imgBX"> 
-                                <img src="./assets/media/postobon.png" alt=""></img>
-                            </div>
-                        </td>
-                        <td>
-                            <h4>Manzana <br><span>Postobon</span></h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td width="60px">
-                            <div class="imgBX"> 
-                                <img src="./assets/media/brisa.png" alt=""></img>
-                            </div>
-                        </td>
-                        <td>
-                            <h4>Agua<br><span>Brisa</span></h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td width="60px">
-                            <div class="imgBX"> 
-                                <img src="./assets/media/postobon.png" alt=""></img>
-                            </div>
-                        </td>
-                        <td>
-                            <h4>Manzana <br><span>Postobon</span></h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td width="60px">
-                            <div class="imgBX"> 
-                                <img src="./assets/media/brisa.png" alt=""></img>
-                            </div>
-                        </td>
-                        <td>
-                            <h4>Agua<br><span>Brisa</span></h4>
-                        </td>
-                    </tr>
-
-                </table>
-            </div>
-
         </div>
+        
+        <script>
+        $(document).ready(function() {
+            $('#example').DataTable({
+                responsive: true,
+                lengthMenu: [ [5, 10, 15, -1], [5, 10, 15, "Todos"] ]
+            });
+        });
+        </script>
 
-        <div class="button">
-            <a href="insertarProducto.html" class="btn">
-                <span class="icon">
-                    <ion-icon name="file-tray-outline"></ion-icon>
-                </span>
-                Insertar producto
-            </a>
-            <a href="modificarProducto.html" class="btn">
-                <span class="icon">
-                    <ion-icon name="pencil-outline"></ion-icon>
-                Modificar producto
-            </a>
-            <a href="eliminarProducto.html" class="btn">
-                <span class="icon">
-                    <ion-icon name="trash-outline"></ion-icon>
-                </span>
-                Eliminar producto
-            </a>
-        </div>
+            <!--====================NUEVOS PRODUCTOS======================-->            
 
-
+        </div>       
 
     </div>
 
