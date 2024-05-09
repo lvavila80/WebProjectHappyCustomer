@@ -1,43 +1,43 @@
-// Archivo: verification.js
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('verificationForm');
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const verificationCode = document.getElementById('verificationCode').value;
+document.addEventListener('DOMContentLoaded', function () {
+    const verificationForm = document.getElementById('verificationForm');
+    const emailInput = document.getElementById('email');
+    const verificationCodeInput = document.getElementById('verificationCode');
+    const messageDiv = document.getElementById('message');
 
-        // Aquí necesitas cambiar la URL a la de tu endpoint específico
-        fetch('localhost:3200/api/usuarios/confirmarregistro', {
+    verificationForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const email = emailInput.value.trim();
+        const verificationCode = parseInt(verificationCodeInput.value);
+
+        if (!email) {
+            messageDiv.textContent = 'Por favor, ingrese su correo electrónico.';
+            return;
+        }
+
+        if (isNaN(verificationCode)) {
+            messageDiv.textContent = 'El código de verificación debe ser un número entero.';
+            return;
+        }
+
+        const requestBody = {
+            correo: email,
+            token: verificationCode
+        };
+
+        fetch('http://localhost:3200/api/usuarios/confirmarregistro', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ token: verificationCode })
+            body: JSON.stringify(requestBody)
         })
-        .then(response => response.text())  // Primero obtén el texto
-        .then(text => {
-            try {
-                return JSON.parse(text);  // Intenta parsear el texto a JSON
-            } catch (error) {
-                throw new Error('La respuesta del servidor no es un JSON válido: ' + text);
-            }
-        })
+        .then(response => response.text()) // Cambiamos response.json() a response.text() para recibir texto plano
         .then(data => {
-            if (data.success) {
-                displayMessage("Verificación exitosa. Su cuenta ha sido activada.", "success");
-            } else {
-                throw new Error(data.message);
-            }
+            messageDiv.textContent = data;
         })
         .catch(error => {
-            console.error('Error:', error);
-            displayMessage('Error al enviar los datos: ' + error.message, "error");
+            messageDiv.textContent = 'Error al procesar la solicitud: ' + error.message;
         });
     });
-
-    function displayMessage(message, type) {
-        const messageDiv = document.getElementById('message');
-        messageDiv.textContent = message;
-        messageDiv.className = ''; // Limpiar clases anteriores
-        messageDiv.classList.add(type); // Agregar clase basada en el tipo de mensaje
-    }
 });
