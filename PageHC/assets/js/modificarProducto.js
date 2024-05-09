@@ -61,6 +61,7 @@ function cargarProducto(id, token) {
 
 function actualizarProducto(id, token) {
     const productoActualizado = {
+        id: id, 
         nombrearticulo: document.getElementById('nombre').value,
         marca: document.getElementById('marca').value,
         modelo: document.getElementById('modelo').value,
@@ -71,7 +72,9 @@ function actualizarProducto(id, token) {
         proveedor: document.getElementById('proveedor').value
     };
 
-    fetch(`http://localhost:3300/api/articulos/actualizarArticulo/${id}`, {
+    console.log("Datos del producto a actualizar:", productoActualizado);
+
+    fetch(`http://localhost:3300/api/articulos/actualizarArticulo`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -92,3 +95,4 @@ function actualizarProducto(id, token) {
         alert('Error al actualizar el producto: ' + error.message);
     });
 }
+
