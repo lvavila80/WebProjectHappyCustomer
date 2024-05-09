@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <td>${producto.modelo}</td>
                     <td>${producto.color}</td>
                     <td>${producto.unidadesdisponibles}</td>
-                    <td>$${producto.valorunitario.toFixed(2)}</td>
+                    <td>$${producto.valorunitario}</td>
                     <td>
                         <button class="btn-edit" data-id="${producto.id}">✏️</button>
                         <button class="btn-delete" data-id="${producto.id}">🗑️</button>
