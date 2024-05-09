@@ -719,25 +719,9 @@ input:valid {
     background: #d90429;
 }
 
-
 /*--=====================FORM=====================*/
 
-.form-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1em;
-}
 
-.form-group.col {
-    display: flex;
-    flex-direction: column;
-    flex-basis: 48%; /* Ajuste el porcentaje según sea necesario para el espaciado */
-}
-
-/* Esto asegura que el textarea y el botón se extiendan a lo ancho del formulario */
-.form-group {
-    width: 100%;
-}
 
 
  /*LOGIN*/

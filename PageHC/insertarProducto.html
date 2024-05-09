@@ -90,12 +90,40 @@
                 <div class="cardHeader">
                     <h2>Insertar producto</h2>
                 </div>
-                <form>
+                <form id="insertarProducto">
                     <div class="form-row">
                         <div class="form-group col">
                             <label for="productName">*Nombre del producto</label>
                             <input type="text" id="productName" required>
                         </div>
+                        <div class="form-group col">
+                            <label for="salePrice">*Marca</label>
+                            <input type="text" id="salePrice" required>
+                        </div>
+
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label for="productCode">*Modelo</label>
+                            <input type="text" id="productCode" required>
+                        </div>
+                        <div class="form-group col">
+                            <label for="stockNumber">*Color</label>
+                            <input type="number" id="stockNumber" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label for="stockNumber">*Unidades compradas</label>
+                            <input type="number" id="stockNumber" required>
+                        </div>
+                        <div class="form-group col">
+                            <label for="stockNumber">*Precio de venta unidad</label>
+                            <input type="number" id="stockNumber" required>
+                        </div>
+
+                    </div>
+                    <div class="form-row">
                         <div class="form-group col">
                             <label for="category">*Categoría</label>
                             <select id="category" required>
@@ -112,30 +140,8 @@
                                 <option value="grocery">Alimentos</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="form-row">
                         <div class="form-group col">
-                            <label for="productCode">*Código del producto</label>
-                            <input type="text" id="productCode" required>
-                        </div>
-                        <div class="form-group col">
-                            <label for="stockNumber">*Número de existencias</label>
-                            <input type="number" id="stockNumber" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col">
-                            <label for="salePrice">*Precio de venta</label>
-                            <input type="text" id="salePrice" required>
-                        </div>
-                        <div class="form-group col">
-                            <label for="purchasePrice">*Precio de compra</label>
-                            <input type="text" id="purchasePrice" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group full-width">
-                            <label for="supplier">*Proveedor</label>
+                            <label for="category">*Proveedor</label>
                             <select id="supplier" required>
                                 <option value="">Seleccione un proveedor</option>
                                 <option value="supplier1">Suministros Papel S.A.S</option>
@@ -158,3 +164,7 @@
                 </form>
             </div>
         </div>
+    </div>
+    <script src="./assets/js/insertarProducto.js"></script>
+</body>
+</html>
