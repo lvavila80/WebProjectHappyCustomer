@@ -54,11 +54,11 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             body: JSON.stringify(usuarioData)
         })
-        .then(response => response.json()) // Asegurarse de que siempre se espera un JSON
+        .then(response => response.json())
         .then(data => {
             if (data.success) {
-                alert(data.message);
-                form.reset();
+                // En lugar de mostrar un alert, redirigir a la página de confirmación
+                window.location.href = 'confirmacionRegistro.html';  // Asegúrate de que esta es la URL correcta
             } else {
                 throw new Error(data.message);
             }
