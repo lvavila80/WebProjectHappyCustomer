@@ -721,6 +721,104 @@ input:valid {
 
 /*--=====================FORM=====================*/
 
+.detailsForm {
+    width: 70%; 
+    margin-left: auto; 
+    margin-right: auto; 
+    padding: 20px; 
+}
+
+.cardHeader {
+    margin-bottom: 60px; 
+}
+
+.form-row {
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="number"], select, input[type="file"] {
+    display: block; 
+    width: calc(100% - 40px); 
+    margin: 10px auto;
+    padding: 8px 20px; 
+}
+
+
+button[type="submit"] {
+    width: auto;
+    padding: 10px 20px; 
+    margin-top: 20px;
+    margin-bottom: 20px; 
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+
+input[type="text"], input[type="number"], input[type="file"], select {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 15px; 
+    border: 2px solid #ccc; 
+    border-radius: 8px;
+    outline: none; 
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="file"]:focus, select:focus {
+    border-color: #6a994e; 
+    box-shadow: 0 0 8px rgba(106, 153, 78, 0.6); 
+}
+
+button[type="submit"] {
+    background-color: #6a994e;
+    color: white; 
+    padding: 10px 20px;
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+button[type="submit"]:hover {
+    background-color: #537a3e;
+}
+
+
+label {
+    font-weight: bold; 
+    margin-bottom: 5px; 
+    display: block;
+}
+
+
+select {
+    display: block; 
+    background: white; 
+}
+
+
+.form-row {
+    display: flex; 
+    justify-content: space-between; 
+}
+
+.form-group {
+    flex: 1; 
+    margin-right: 20px; 
+}
+
+.form-group:last-child {
+    margin-right: 0; 
+}
+
+textarea, select {
+    border: 2px solid #ccc;
+    background-color: #fff;
+    transition: border-color 0.3s;
+}
+
+textarea:focus, select:focus {
+    border-color: #6a994e;
+}
 
 
 
