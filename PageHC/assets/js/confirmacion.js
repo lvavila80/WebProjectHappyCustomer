@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const emailInput = document.getElementById('email');
     const verificationCodeInput = document.getElementById('verificationCode');
     const messageDiv = document.getElementById('message');
+    const goToHomeButton = document.getElementById('goToHome'); // Referencia al botón
 
     verificationForm.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -32,9 +33,15 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             body: JSON.stringify(requestBody)
         })
-        .then(response => response.text()) // Cambiamos response.json() a response.text() para recibir texto plano
+        .then(response => response.text())
         .then(data => {
-            messageDiv.textContent = data;
+            messageDiv.textContent = data.trim();
+            if (data.trim() === 'Usuario confirmado' || data.trim() === 'Usuario Confirmado.') {
+                goToHomeButton.disabled = false; // Habilita el botón
+                goToHomeButton.addEventListener('click', function() {
+                    window.location.href = 'index.html'; // Redirige al usuario a index.html
+                });
+            }
         })
         .catch(error => {
             messageDiv.textContent = 'Error al procesar la solicitud: ' + error.message;
