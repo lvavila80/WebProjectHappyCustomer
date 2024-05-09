@@ -85,38 +85,74 @@
 
         <!--====================INVENTARIO======================-->
 
-        <div class="details" style="display: flex; justify-content: space-between;">
-            <div class="recentOrders" style="flex: 1; margin-right: 20px;">
+        <div class="detailsForm">
+            <div class="recentOrders">
                 <div class="cardHeader">
-                    <h2>Productos</h2>
-                    <div class="button">
-                        <a href="insertarProducto.html" class="btn">
-                            <span class="icon">
-                                <ion-icon name="file-tray-outline"></ion-icon>
-                            </span>
-                            Nuevo producto
-                        </a>
-                    </div>
+                    <h2>Modificar producto</h2>
                 </div>
-                <table id="tablaProductos">
-                    <thead>
-                        <tr>
-                            <th>Artículo</th>
-                            <th>Marca</th>
-                            <th>Modelo</th>
-                            <th>Color</th>
-                            <th>Unidades Compradas</th>
-                            <th>Valor por Unidad</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                <form id="insertarProducto">
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label for="nombre">Nombre del producto</label>
+                            <input type="text" id="nombre" required>
+                        </div>
+                        <div class="form-group col">
+                            <label for="marca">Marca</label>
+                            <input type="text" id="marca" required>
+                        </div>
 
-                    </tbody>
-                </table>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label for="modelo">Modelo</label>
+                            <input type="text" id="modelo" required>
+                        </div>
+                        <div class="form-group col">
+                            <label for="color">Color</label>
+                            <input type="text" id="color" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label for="unidades">Unidades compradas</label>
+                            <input type="number" id="unidades" required>
+                        </div>
+                        <div class="form-group col">
+                            <label for="precio">Precio de venta unidad</label>
+                            <input type="number" id="precio" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label for="categoria">Categoría</label>
+                            <select id="categoria" required>
+                                <option value="">Seleccione una categoría</option>
+                                <option value="papeleria">Papeleria</option>
+                                <option value="ropa">Ropa</option>
+                                <option value="hogar">Hogar</option>
+                                <option value="juguetes">Juguetes</option>
+                                <option value="libros">Libros</option>
+                                <option value="tecnologia">Tecnologia</option>
+                            </select>
+                        </div>
+                        <div class="form-group col">
+                            <label for="proveedor">Proveedor</label>
+                            <select id="proveedor" required>
+                                <option value="">Seleccione un proveedor</option>
+                                <option value="supplier1">Suministros Papel S.A.S</option>
+                                <option value="supplier2">Limpieza total Ltda</option>
+                                <option value="supplier3">Tecnología Avanzada S.A</option>
+                                <option value="supplier4">Alimentos Deliciosos S.A.S</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="button">
+                        <button type="submit" id="modificarProducto" class="btn">Modificar producto</button>
+                    </div>
+                </form>
             </div>
-        </div>
-        
 
 
             <!--====================NUEVOS PRODUCTOS======================-->            

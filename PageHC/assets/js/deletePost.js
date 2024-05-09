@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNTIyODg1NCwiZXhwIjoxNzE1MjQ2ODU0fQ.GhDx1KqhUiYxP4zywIVkrDG1dMJgaQmzL7HBTs71c-8';
+    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNTI4OTY1NCwiZXhwIjoxNzE1MzA3NjU0fQ.ddD7e8JeKuTniLHFOYD4P318u-MN72dskoWwRDTFutA';
 
     function cargarDatos() {
         const url = 'http://localhost:3300/api/articulos/todos';
@@ -29,10 +29,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 `;
             });
             agregarEventosEliminar();
+            agregarEventosEditar();
         })
         .catch(error => {
             console.error('Error al cargar los productos:', error);
             alert('Error al cargar los productos: ' + error.message);
+        });
+    }
+
+    function agregarEventosEliminar() {
+        document.querySelectorAll('.btn-delete').forEach(button => {
+            button.addEventListener('click', function() {
+                const idProducto = this.getAttribute('data-id');
+                eliminarProducto(idProducto);
+            });
+        });
+    }
+
+    function agregarEventosEditar() {
+        document.querySelectorAll('.btn-edit').forEach(button => {
+            button.addEventListener('click', function() {
+                const idProducto = this.getAttribute('data-id');
+                if (confirm('¿Desea editar este producto?')) {
+                    window.location.href = `modificarProducto.html?id=${idProducto}`;
+                }
+            });
         });
     }
 
@@ -45,33 +66,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ id: idProducto }) // Asegurarse de que el ID se envía en el cuerpo
+                body: JSON.stringify({ id: idProducto }) 
             })
             .then(response => {
                 if (!response.ok) {
                     return response.text().then(text => { throw new Error(text) });
                 }
-                return response.text(); // Asumiendo que la respuesta es texto y no JSON
+                return response.text(); 
             })
             .then(responseMessage => {
                 alert('Producto eliminado correctamente: ' + responseMessage);
-                cargarDatos();  // Recargar los datos después de eliminar
+                cargarDatos();  
             })
             .catch(error => {
                 console.error('Error al eliminar el producto:', error);
                 alert('Error al eliminar el producto: ' + error.message);
             });
         }
-    }
-    
-    
-    function agregarEventosEliminar() {
-        document.querySelectorAll('.btn-delete').forEach(button => {
-            button.addEventListener('click', function() {
-                const idProducto = this.getAttribute('data-id');
-                eliminarProducto(idProducto);
-            });
-        });
     }
 
     cargarDatos();

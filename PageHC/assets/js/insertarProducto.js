@@ -1,4 +1,4 @@
-const token='eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNTIyODg1NCwiZXhwIjoxNzE1MjQ2ODU0fQ.GhDx1KqhUiYxP4zywIVkrDG1dMJgaQmzL7HBTs71c-8';
+const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNTI4MzQ2OSwiZXhwIjoxNzE1MzAxNDY5fQ.sm-8S0Id9WwJu5ADeKQX0bcrd9cP5k9Jh0r4iiYB034';
 
 function insertarProducto(event) {
     event.preventDefault();
@@ -17,25 +17,24 @@ function insertarProducto(event) {
 
     const confirmacion = confirm("¿Estás seguro de que deseas insertar el producto?");
     if (confirmacion) {
-        const producto = {
-            nombrearticulo: nombre,
-            marca: marca,
-            modelo: modelo,
-            color: color,
-            unidaddemedida: 'unidades'
-        };
         const datosCompra = {
-            articulosCompra: [
+            "articulosCompra": [
                 {
-                    articulo: producto,
-                    unidadesCompradas: unidades,
-                    valorUnidad: precio,
-                    idCategoria: 1,
-                    estado: 1
+                    "articulo": {
+                        "nombrearticulo": nombre,
+                        "marca": marca,
+                        "modelo": modelo,
+                        "color": color,
+                        "unidaddemedida": "Unidades"
+                    },
+                    "unidadesCompradas": unidades,
+                    "valorUnidad": precio,
+                    "idCategoria": 1,
+                    "estado": 1
                 }
             ],
-            idProveedor: 1,
-            idUsuario: 1
+            "idProveedor": 1,
+            "idUsuario": 1
         };
 
         fetch('http://localhost:3300/api/compras/registrarCompra', {
@@ -48,7 +47,7 @@ function insertarProducto(event) {
         })
         .then(response => {
             if (!response.ok) {
-                throw new Error('Network response was not ok, status: ' + response.status);
+                return response.text().then(text => { throw new Error(text) }); 
             }
             return response.json();
         })
