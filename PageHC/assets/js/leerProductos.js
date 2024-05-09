@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNTIwMTgyOSwiZXhwIjoxNzE1MjE5ODI5fQ.B75ZnsBseWgm14lSUWAbQHqtSqiHTZQG9iRl-wsqnxw';
+    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNTIyODg1NCwiZXhwIjoxNzE1MjQ2ODU0fQ.GhDx1KqhUiYxP4zywIVkrDG1dMJgaQmzL7HBTs71c-8';
 
     function cargarDatos() {
         const url = 'http://localhost:3300/api/articulos/todos';
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return response.json();
         })
         .then(data => {
-            console.log('Datos recibidos:', data); // Ver los datos recibidos
+            console.log('Datos recibidos:', data);
             const tbody = document.getElementById('tablaProductos').getElementsByTagName('tbody')[0];
             tbody.innerHTML = '';
             data.forEach(articuloInventario => {
