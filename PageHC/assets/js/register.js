@@ -6,16 +6,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const contrasena = document.getElementById('contrasena');
     const confirmarContrasena = document.getElementById('confirmar-contrasena');
     const cedula = document.getElementById('cedula');
+    const passwordErrorDiv = document.getElementById('password-error');
 
     function validatePasswordStrength() {
         const passwordValue = contrasena.value;
         const hasMinLength = passwordValue.length >= 8;
         const hasUpperCase = /[A-Z]/.test(passwordValue);
         const hasNumbers = /[0-9]/.test(passwordValue);
-        if (!hasMinLength || !hasUpperCase || !hasNumbers) {
-            alert('La contraseña debe tener al menos 8 caracteres, incluir una mayúscula y números.');
+        const hasSpecialChar = /[\!\@\#\$\%\^\&\*\(\)\_\+\.\,\;\:]/.test(passwordValue);
+
+        if (!hasMinLength || !hasUpperCase || !hasNumbers || !hasSpecialChar) {
+            const errorMessage = 'La contraseña debe tener al menos 8 caracteres, incluir una mayúscula, un número y un carácter especial.';
+            passwordErrorDiv.textContent = errorMessage;
+            passwordErrorDiv.style.display = 'block';
             return false;
         }
+        passwordErrorDiv.style.display = 'none';
         return true;
     }
 
@@ -29,6 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
+
+        // Ocultar mensajes de error
+        passwordErrorDiv.style.display = 'none';
+
         if (correo.value !== confirmarCorreo.value) {
             alert("Los correos no coinciden. Por favor, confirme su correo electrónico.");
             return;
