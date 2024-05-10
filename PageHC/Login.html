@@ -3,34 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css"> <!-- Enlace a tus estilos CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styleLogin.css"> <!-- Asegúrate de que el CSS sea el correcto -->
     <title>Inicio de sesión - Happy Customer</title>
 </head>
-<body>
-    <div class="container-fluid">
-        <div class="login-container">
-            <h1>¡Bienvenido!</h1>
-            <h2>Happy Customer</h2>
-            <input type="email" id="correo" name="correo" class="input-field" placeholder="Correo electrónico*" required>
-            <input type="password" id="contrasena" name="contrasena" class="input-field" placeholder="Contraseña*" required>
-            <label for="olvidar" class="form-check-label">
-                <input type="checkbox" id="olvidar" name="olvidar" class="form-check-input">
-                Mostrar Contraseña
-            </label>
-            <button type="button" class="btn login-button">Iniciar sesión</button>
-            <div class="register-link-container">
-                <h3>¿Aún no estás registrado?</h3>
-                <button type="button" class="btn register-button">¡Regístrate!</button>
+<body class="login-page">
+    <div class="container-fluid register-page"> <!-- Cambia las clases para usar el mismo estilo que la página de registro -->
+        <div class="row no-gutters">
+            <div class="col-lg-6 form-section d-flex flex-column justify-content-center">
+                <center>
+                    <h1>¡Bienvenido!</h1>
+                    <h2>Happy Customer</h2>
+                    <h3>Elevate Your Shopping Experience</h3>
+                </center>
+
+                <div class="container-fluid">
+                    <form method="POST">
+                        <div class="form-group">
+                            <input type="email" id="correo" name="correo" class="form-control input-field" placeholder="Correo electrónico*" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="contrasena" name="contrasena" class="form-control input-field" placeholder="Contraseña*" required>
+                        </div>
+                        <div class="form-group form-check">
+                            <label class="form-check-label" for="mostrarContrasena">
+                                <input type="checkbox" id="mostrarContrasena" name="mostrarContrasena" class="form-check-input">
+                                Mostrar Contraseña
+                            </label>
+                        </div>
+                        <button type="submit" class="btn submit-button">Iniciar sesión</button>
+                        <div class="link-container">
+                            <h5>¿Aún no estás registrado?</h5>
+                            <button type="button" class="btn login-button">¡Regístrate!</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-6 image-section d-flex flex-column justify-content-center">
+                <figure>
+                    <img src="https://us.123rf.com/450wm/turbodesign/turbodesign1912/turbodesign191200024/135645956-indicadores-de-crecimiento-diagramas-eps-vectoriales-10-tabla-de-crecimiento-escuela-de.jpg" alt="Imagen de inicio de sesión" class="img-fluid">
+                </figure>
+                <h3>Obtén un mejor control de tu negocio con Happy Customer</h3>
+                <h4>¡Inicia sesión para empezar!</h4>
+                <button type="button" class="btn password-button">¿Olvidaste tu contraseña?</button>
             </div>
         </div>
-        
-        <div class="info-container">
-            <img src="https://us.123rf.com/450wm/turbodesign/turbodesign1912/turbodesign191200024/135645956-indicadores-de-crecimiento-diagramas-eps-vectoriales-10-tabla-de-crecimiento-escuela-de.jpg" alt="Imagen de inicio de sesión" class="info-image">
-            <h3>Obtén un mejor control de tu negocio con Happy Customer</h3>
-            <h4>¡Inicia sesión para empezar!</h4>
-            <button type="button" class="btn password-button">¿Olvidaste tu contraseña?</button>
-        </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
 
