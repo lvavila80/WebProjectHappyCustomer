@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificación de Registro</title>
+    <link rel="stylesheet" href="assets/css/styleConfirmacion.css">
+</head>
+<body>
+    <div class="verification-container">
+        <h2>Confirmar Registro</h2>
+        <p>Por favor, ingrese el código de verificación que ha sido enviado a su correo electrónico.</p>
+        <form id="verificationForm">
+            <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
+            <input type="text" id="verificationCode" name="verificationCode" placeholder="Código de Verificación" required>
+            <button type="submit">Verificar Código</button>
+        </form>
+        <button id="goToHome" class="buttonnext" disabled>Ir a Inicio</button>
+        <div id="message"></div>
+    </div>
+    <script src="assets/js/confirmacion.js"></script>
+</body>
+</html>

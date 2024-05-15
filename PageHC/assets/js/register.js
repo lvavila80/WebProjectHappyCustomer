@@ -1,72 +1,81 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('.register-page #formRegistro');
+    const form = document.querySelector('#formRegistro');
     const nombre = document.getElementById('nombre');
     const correo = document.getElementById('correo');
     const confirmarCorreo = document.getElementById('confirmar-correo');
     const contrasena = document.getElementById('contrasena');
     const confirmarContrasena = document.getElementById('confirmar-contrasena');
-    const contrasenaErrorAlert = contrasena.nextElementSibling.nextElementSibling;
-    const confirmarContrasenaErrorAlert = confirmarContrasena.nextElementSibling.nextElementSibling;
+    const cedula = document.getElementById('cedula');
+    const passwordErrorDiv = document.getElementById('password-error');
 
-    // Función para validar la fortaleza de la contraseña
     function validatePasswordStrength() {
         const passwordValue = contrasena.value;
         const hasMinLength = passwordValue.length >= 8;
         const hasUpperCase = /[A-Z]/.test(passwordValue);
         const hasNumbers = /[0-9]/.test(passwordValue);
+        const hasSpecialChar = /[\!\@\#\$\%\^\&\*\(\)\_\+\.\,\;\:]/.test(passwordValue);
 
-        if (!hasMinLength || !hasUpperCase || !hasNumbers) {
-            contrasena.classList.add('input-error');
-            contrasenaErrorAlert.innerText = 'La contraseña debe tener más de 8 caracteres, incluir al menos una mayúscula y números.';
-            contrasenaErrorAlert.style.display = 'block';
-        } else {
-            contrasena.classList.remove('input-error');
-            contrasenaErrorAlert.style.display = 'none';
+        if (!hasMinLength || !hasUpperCase || !hasNumbers || !hasSpecialChar) {
+            const errorMessage = 'La contraseña debe tener al menos 8 caracteres, incluir una mayúscula, un número y un carácter especial.';
+            passwordErrorDiv.textContent = errorMessage;
+            passwordErrorDiv.style.display = 'block';
+            return false;
         }
+        passwordErrorDiv.style.display = 'none';
+        return true;
     }
 
-    // Evento para validar la fortaleza de la contraseña en tiempo real
-    contrasena.addEventListener('input', validatePasswordStrength);
-
-    // Función para verificar si las contraseñas coinciden
     function validatePasswordMatch() {
         if (contrasena.value !== confirmarContrasena.value) {
-            confirmarContrasena.classList.add('input-error');
-            confirmarContrasenaErrorAlert.innerText = 'Las contraseñas no coinciden.';
-            confirmarContrasenaErrorAlert.style.display = 'block';
-        } else {
-            confirmarContrasena.classList.remove('input-error');
-            confirmarContrasenaErrorAlert.style.display = 'none';
+            alert('Las contraseñas no coinciden.');
+            return false;
         }
+        return true;
     }
 
-    // Evento para verificar la coincidencia de las contraseñas en tiempo real
-    confirmarContrasena.addEventListener('input', validatePasswordMatch);
-
-    // Manejo del envío del formulario
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-        let valid = true;
 
-        // Validación de todos los campos requeridos
-        [nombre, correo, confirmarCorreo, contrasena, confirmarContrasena].forEach(input => {
-            if (!input.value.trim()) {
-                input.classList.add('input-error');
-                input.nextElementSibling.style.display = 'block';
-                input.nextElementSibling.innerText = 'Este campo es requerido.';
-                valid = false;
-            } else {
-                input.classList.remove('input-error');
-                input.nextElementSibling.style.display = 'none';
-            }
-        });
+        // Ocultar mensajes de error
+        passwordErrorDiv.style.display = 'none';
 
-        // Revalidación de la fortaleza de la contraseña y coincidencia antes de enviar
-        validatePasswordStrength();
-        validatePasswordMatch();
-
-        if (valid && contrasena.value === confirmarContrasena.value && contrasenaErrorAlert.style.display === 'none') {
-            form.submit(); // Si todo está correcto, enviar el formulario
+        if (correo.value !== confirmarCorreo.value) {
+            alert("Los correos no coinciden. Por favor, confirme su correo electrónico.");
+            return;
         }
+
+        if (!validatePasswordStrength() || !validatePasswordMatch()) {
+            return;
+        }
+
+        let usuarioData = {
+            correo: confirmarCorreo.value,
+            passwd: confirmarContrasena.value,
+            cedula: parseInt(cedula.value),
+            nombre: nombre.value,
+            cambiarClave: false,
+            rol: "ADMIN"
+        };
+
+        fetch('http://localhost:3200/api/usuarios/insertarUsuario', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(usuarioData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // En lugar de mostrar un alert, redirigir a la página de confirmación
+                window.location.href = 'confirmacionRegistro.html';  // Asegúrate de que esta es la URL correcta
+            } else {
+                throw new Error(data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Ocurrió un error al enviar los datos: ' + error.message);
+        });
     });
 });

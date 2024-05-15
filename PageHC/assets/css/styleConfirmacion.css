@@ -1,0 +1,68 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.verification-container {
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+input[type="text"], input[type="email"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #2b6e0b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #42bb54;
+}
+
+.buttonnext {
+    background-color: #4CAF50; /* Verde */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px; /* Modificado para añadir un margen superior para distanciar del mensaje */
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.buttonnext:disabled {
+    background-color: #ccc; /* Gris para mostrar que está deshabilitado */
+    cursor: default;
+}
+
+.buttonnext:hover {
+    background-color: #45a049; /* Un verde más oscuro al hacer hover, solo si está habilitado */
+}
+
+#message {
+    margin-top: 20px;
+    color: red;
+}

@@ -3,34 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css"> <!-- Enlace a tus estilos CSS -->
-    <title>Inicio de sesión - Happy Customer</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/styleRegister.css">
+    <title>Registro - Happy Customer</title>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="login-container">
-            <h1>¡Bienvenido!</h1>
-            <h2>Happy Customer</h2>
-            <input type="email" id="correo" name="correo" class="input-field" placeholder="Correo electrónico*" required>
-            <input type="password" id="contrasena" name="contrasena" class="input-field" placeholder="Contraseña*" required>
-            <label for="olvidar" class="form-check-label">
-                <input type="checkbox" id="olvidar" name="olvidar" class="form-check-input">
-                Mostrar Contraseña
-            </label>
-            <button type="button" class="btn login-button">Iniciar sesión</button>
-            <div class="register-link-container">
-                <h3>¿Aún no estás registrado?</h3>
-                <button type="button" class="btn register-button">¡Regístrate!</button>
+    <div class="container-fluid register-page">
+        <div class="row no-gutters">
+            <div class="col-lg-6 form-section d-flex flex-column justify-content-center">
+                <center>
+                    <h1>¡Bienvenido!</h1>
+                    <h2>Happy Customer</h2>
+                    <h3>Elevate Your Shopping Experience</h3>
+                    <section>
+                        <h4>Para comenzar a usar nuestra herramienta, completa el formulario de registro</h4>
+                    </section>
+                </center>
+
+                <div class="container-fluid">
+                    <form method="POST" id="formRegistro">
+                        <div class="form-group">
+                            <input type="text" id="nombre" name="nombre" class="form-control input-field" placeholder="Nombre*" required onpaste="return false">
+                            <span class="error-message">Es necesario que indiques tu nombre.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" id="correo" name="correo" class="form-control input-field" placeholder="Correo electrónico*" required onpaste="return false">
+                            <span class="error-message">Es necesario que indiques tu correo electrónico.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" id="confirmar-correo" name="confirmar-correo" class="form-control input-field" placeholder="Confirmar correo electrónico*" required onpaste="return false">
+                            <div class="alert error-alert" style="display:none;">Los correos electrónicos no coinciden.</div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" id="contrasena" name="contrasena" class="form-control input-field" placeholder="Contraseña*" required>
+                            <div id="password-error" class="alert error-alert" style="display:none;">La contraseña no cumple con los requisitos de seguridad.</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="password" id="confirmar-contrasena" name="confirmar-contrasena" class="form-control input-field" placeholder="Confirmar contraseña*" required>
+                            <div class="alert error-alert" style="display:none;">Las contraseñas no coinciden.</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="number" id="cedula" name="cedula" class="form-control input-field" placeholder="Cédula*" required>
+                        </div>
+
+                        <div class="form-group form-check">
+                            <label class="form-check-label" for="terminos">
+                                <input type="checkbox" id="terminos" name="terminos" class="form-check-input">
+                                Acepta nuestros términos y condiciones
+                            </label>
+                        </div>
+                        <button type="submit" class="btn submit-button">¡Regístrate!</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-6 image-section d-flex flex-column justify-content-center">
+                <figure>
+                    <img src="https://media.istockphoto.com/id/1278695302/es/vector/contabilidad-finanzas-datos-bancarios-peque%C3%B1os-personajes-contables-alrededor-de-enormes.jpg?s=612x612&w=0&k=20&c=Z3Z22cuP75v9W-aojeykALGNoQI2XPiLS4peONAuWo0=" alt="Imagen de registro" class="img-fluid">
+                </figure>
+                <h5>¿Ya estás registrado?</h5>
+                <button type="button" class="btn login-button">Iniciar sesión</button>
             </div>
         </div>
-        
-        <div class="info-container">
-            <img src="https://us.123rf.com/450wm/turbodesign/turbodesign1912/turbodesign191200024/135645956-indicadores-de-crecimiento-diagramas-eps-vectoriales-10-tabla-de-crecimiento-escuela-de.jpg" alt="Imagen de inicio de sesión" class="info-image">
-            <h3>Obtén un mejor control de tu negocio con Happy Customer</h3>
-            <h4>¡Inicia sesión para empezar!</h4>
-            <button type="button" class="btn password-button">¿Olvidaste tu contraseña?</button>
+    </div>
+
+    <div class="modal fade" id="responseModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmación de Registro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Verifique su correo electrónico para confirmar su registro.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="./assets/js/register.js"></script>
 </body>
 </html>
 
