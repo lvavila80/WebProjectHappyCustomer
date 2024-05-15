@@ -59,6 +59,10 @@ function cargarProducto(id, token) {
     .catch(error => console.error('Error al cargar los datos del producto:', error));
 }
 
+
+
+
+
 function actualizarProducto(id, token) {
     const productoActualizado = {
         id: id, 

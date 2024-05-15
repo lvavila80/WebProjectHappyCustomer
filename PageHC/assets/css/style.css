@@ -830,8 +830,8 @@ textarea:focus, select:focus {
     height: 100vh;
     margin: 0;
     padding: 0;
-    width: 100vw; /* Asegúrate de que el contenedor ocupe toda la anchura de la ventana */
-    overflow: hidden; /* Oculta cualquier desbordamiento */
+    width: 100vw; 
+    overflow: hidden; 
 }
 
 .login-container {
@@ -840,8 +840,8 @@ textarea:focus, select:focus {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #2c5003; /* El color de fondo verde oscuro */
-    color: white; /* Texto en color blanco */
+    background-color: #2c5003;
+    color: white;
 }
 
 .info-container {
@@ -849,43 +849,42 @@ textarea:focus, select:focus {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Cambiado a center para alinear el texto y la imagen en el centro */
-    background-color: white; /* El color de fondo blanco */
-    color: black; /* Texto en color negro */
+    align-items: center; 
+    background-color: white;
+    color: black; 
 }
 
-/* Ajuste el tamaño y la alineación de la imagen */
 .info-container img {
-    max-width: 100%; /* Se ajusta al 100% del contenedor .col-md-6 */
-    margin-bottom: 1rem; /* Añadir un margen debajo de la imagen */
+    max-width: 100%;
+    margin-bottom: 1rem; 
 }
 
 .input-field {
-    width: calc(100% - 20px); /* 100% del ancho menos el padding */
-    margin: 10px 0; /* Margen arriba y abajo para separar */
+    width: calc(100% - 20px); 
+    margin: 10px 0; 
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 20px; /* Bordes redondeados para los campos de texto */
-    font-size: 16px; /* Tamaño de fuente para los campos de entrada */
+    border-radius: 20px;
+    font-size: 16px;
 }
 
-/* Estilos para cuando los campos de entrada son válidos o enfocados */
+
 input:invalid:focus {
-    background-color: #f8d7da; /* Fondo rojo claro para resaltar campos inválidos */
+    background-color: #f8d7da; 
 }
 
 input:valid {
-    border: 2px solid #28a745; /* Borde verde para campos válidos */
+    border: 2px solid #28a745; 
 }
 
 /* Estilos de botones */
 .btn {
     padding: 10px 20px;
-    width: auto; /* Auto para que el ancho sea el del contenido */
+    width: auto; 
     display: block;
-    margin: 10px auto; /* Margen arriba y abajo para centrar, izquierda y derecha auto */
-    font-size: 16px; /* Tamaño de fuente consistente para todos los botones */
-    text-align: center; /* Asegura que el texto está centrado */
+    margin: 10px auto; 
+    font-size: 16px; 
+    text-align: center; 
 }
 
 .login-button {
