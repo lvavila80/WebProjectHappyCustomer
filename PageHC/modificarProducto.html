@@ -88,74 +88,74 @@
         <div class="detailsForm">
             <div class="recentOrders">
                 <div class="cardHeader">
-                    <h2>Insertar producto</h2>
+                    <h2>Modificar producto</h2>
                 </div>
                 <form id="insertarProducto">
                     <div class="form-row">
                         <div class="form-group col">
                             <label for="nombre">Nombre del producto</label>
-                            <input type="text" id="nombre" required>
+                            <input type="text" id="nombre" name="nombre" required>
                         </div>
                         <div class="form-group col">
                             <label for="marca">Marca</label>
-                            <input type="text" id="marca" required>
+                            <input type="text" id="marca" name="marca" required>
                         </div>
 
                     </div>
                     <div class="form-row">
                         <div class="form-group col">
                             <label for="modelo">Modelo</label>
-                            <input type="text" id="modelo" required>
+                            <input type="text" id="modelo" name="modelo" required>
                         </div>
                         <div class="form-group col">
                             <label for="color">Color</label>
-                            <input type="text" id="color" required>
+                            <input type="text" id="color" name="color" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col">
                             <label for="unidades">Unidades compradas</label>
-                            <input type="number" id="unidades" required>
+                            <input type="number" id="unidades" name="unidades" required>
                         </div>
                         <div class="form-group col">
                             <label for="precio">Precio de venta unidad</label>
-                            <input type="number" id="precio" required>
+                            <input type="number" id="precio" name="precio" required>
                         </div>
                     </div>
 
-            <!--    <div class="form-row">
+                <!--<div class="form-row">
                         <div class="form-group col">
                             <label for="categoria">Categoría</label>
                             <select id="categoria" required>
                                 <option value="">Seleccione una categoría</option>
-                                <option value="1">Papeleria</option>
-                                <option value="2">Ropa</option>
-                                <option value="3">Hogar</option>
-                                <option value="4">Juguetes</option>
-                                <option value="5">Libros</option>
-                                <option value="6">Tecnologia</option>
+                                <option value="papeleria">Papeleria</option>
+                                <option value="ropa">Ropa</option>
+                                <option value="hogar">Hogar</option>
+                                <option value="juguetes">Juguetes</option>
+                                <option value="libros">Libros</option>
+                                <option value="tecnologia">Tecnologia</option>
                             </select>
                         </div>
                         <div class="form-group col">
                             <label for="proveedor">Proveedor</label>
                             <select id="proveedor" required>
                                 <option value="">Seleccione un proveedor</option>
-                                <option value="1">Suministros Papel S.A.S</option>
-                                <option value="2">Limpieza total Ltda</option>
-                                <option value="3">Tecnología Avanzada S.A</option>
-                                <option value="4">Alimentos Deliciosos S.A.S</option>
+                                <option value="supplier1">Suministros Papel S.A.S</option>
+                                <option value="supplier2">Limpieza total Ltda</option>
+                                <option value="supplier3">Tecnología Avanzada S.A</option>
+                                <option value="supplier4">Alimentos Deliciosos S.A.S</option>
                             </select>
                         </div>
                     </div>-->
 
                     <div class="button">
-                        <button type="submit" id="btnInsertarProducto" class="btn">Insertar producto</button>
+                        <button type="submit" id="modificarProducto" class="btn">Modificar producto</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    <script src="./assets/js/insertarProducto.js"></script>
+    <script src="./assets/js/modificarProducto.js"></script>
     <!--====================IONICONS======================-->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

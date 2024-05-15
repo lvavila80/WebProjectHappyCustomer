@@ -588,27 +588,11 @@ input:valid {
     border-bottom: none;
 }
 
-.details .recentOrders table tbody tr:hover{
-    background: var(--color);
-    color: var(--white);
-
-}
 
 .details .recentOrders table tr td{
     padding: 10px;
 }
 
-.details .recentOrders table tr td:last-child{
-    text-align: center;
-}
-
-.details .recentOrders table tr td:last-child(2){
-    text-align: end;
-}
-
-.details .recentOrders table tr td:last-child(3){
-    text-align: center;
-}
 
 .status.delivered{
     padding: 2px 4px;
@@ -700,6 +684,10 @@ input:valid {
 
 /*--====================INVENTARIO======================*/
 
+.details .recentOrders #tablaProductos td {
+    padding-left: 80px;
+}
+
 .button{
     display: flex;
     justify-content: center; 
@@ -708,76 +696,130 @@ input:valid {
     padding: 20px; 
 }
 
-.btn {
-    display: flex; 
-    align-items: center; 
-    gap: 10px; 
+.btn-delete, .btn-edit {
     padding: 10px 20px; 
     text-decoration: none; 
-    background-color: var(--color); 
-    color: white; 
+    margin-bottom: 10px;
+    margin-left: 0;
     border-radius: 5px; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+    background-color: var(--gray);
+    color: var(--black1);
 }
 
-.button .btn:nth-child(2) {
-    background-color: #fca311; 
+.btn-edit{
+    background: #e9c46a;
 }
 
-.button .btn:nth-child(3) {
-    background-color: red; 
+.btn-edit:hover,.btn-delete:hover{
+    background: #6a994e;
+    color: #222;
 }
 
-.icon {
-    display: flex;
-    align-items: center;
-}
-
-.detailsForm{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    width: 100%;
-    padding: 20px;
-    display: grid;
-    grid-gap:30px;
-    margin-top: 10px;
-}
-
-.detailsForm .recentOrders{
-    position: relative;
-    display: grid;
-    min-height: 500px;
-    background: var(--white);
-    padding: 20px;
-    box-shadow: 0 7px 25px rgba(0,0,0,0.8);
-    border-radius: 20px;
-}
-
-.detailsForm .cardHeader{
-    display:flex;
-    justify-content: center;
-    align-items: flex-start;
+.btn-delete{
+    background: #d90429;
 }
 
 /*--=====================FORM=====================*/
 
+.detailsForm {
+    width: 70%; 
+    margin-left: auto; 
+    margin-right: auto; 
+    padding: 20px; 
+}
+
+.cardHeader {
+    margin-bottom: 60px; 
+}
+
 .form-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1em;
+    margin-bottom: 20px;
 }
 
-.form-group.col {
-    display: flex;
-    flex-direction: column;
-    flex-basis: 48%; /* Ajuste el porcentaje según sea necesario para el espaciado */
+input[type="text"], input[type="number"], select, input[type="file"] {
+    display: block; 
+    width: calc(100% - 40px); 
+    margin: 10px auto;
+    padding: 8px 20px; 
 }
 
-/* Esto asegura que el textarea y el botón se extiendan a lo ancho del formulario */
+
+button[type="submit"] {
+    width: auto;
+    padding: 10px 20px; 
+    margin-top: 20px;
+    margin-bottom: 20px; 
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+
+input[type="text"], input[type="number"], input[type="file"], select {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 15px; 
+    border: 2px solid #ccc; 
+    border-radius: 8px;
+    outline: none; 
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="file"]:focus, select:focus {
+    border-color: #6a994e; 
+    box-shadow: 0 0 8px rgba(106, 153, 78, 0.6); 
+}
+
+button[type="submit"] {
+    background-color: #6a994e;
+    color: white; 
+    padding: 10px 20px;
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+button[type="submit"]:hover {
+    background-color: #537a3e;
+}
+
+
+label {
+    font-weight: bold; 
+    margin-bottom: 5px; 
+    display: block;
+}
+
+
+select {
+    display: block; 
+    background: white; 
+}
+
+
+.form-row {
+    display: flex; 
+    justify-content: space-between; 
+}
+
 .form-group {
-    width: 100%;
+    flex: 1; 
+    margin-right: 20px; 
 }
+
+.form-group:last-child {
+    margin-right: 0; 
+}
+
+textarea, select {
+    border: 2px solid #ccc;
+    background-color: #fff;
+    transition: border-color 0.3s;
+}
+
+textarea:focus, select:focus {
+    border-color: #6a994e;
+}
+
 
 
  /*LOGIN*/
@@ -788,8 +830,8 @@ input:valid {
     height: 100vh;
     margin: 0;
     padding: 0;
-    width: 100vw; /* Asegúrate de que el contenedor ocupe toda la anchura de la ventana */
-    overflow: hidden; /* Oculta cualquier desbordamiento */
+    width: 100vw; 
+    overflow: hidden; 
 }
 
 .login-container {
@@ -798,8 +840,8 @@ input:valid {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #2c5003; /* El color de fondo verde oscuro */
-    color: white; /* Texto en color blanco */
+    background-color: #2c5003;
+    color: white;
 }
 
 .info-container {
@@ -807,43 +849,42 @@ input:valid {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Cambiado a center para alinear el texto y la imagen en el centro */
-    background-color: white; /* El color de fondo blanco */
-    color: black; /* Texto en color negro */
+    align-items: center; 
+    background-color: white;
+    color: black; 
 }
 
-/* Ajuste el tamaño y la alineación de la imagen */
 .info-container img {
-    max-width: 100%; /* Se ajusta al 100% del contenedor .col-md-6 */
-    margin-bottom: 1rem; /* Añadir un margen debajo de la imagen */
+    max-width: 100%;
+    margin-bottom: 1rem; 
 }
 
 .input-field {
-    width: calc(100% - 20px); /* 100% del ancho menos el padding */
-    margin: 10px 0; /* Margen arriba y abajo para separar */
+    width: calc(100% - 20px); 
+    margin: 10px 0; 
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 20px; /* Bordes redondeados para los campos de texto */
-    font-size: 16px; /* Tamaño de fuente para los campos de entrada */
+    border-radius: 20px;
+    font-size: 16px;
 }
 
-/* Estilos para cuando los campos de entrada son válidos o enfocados */
+
 input:invalid:focus {
-    background-color: #f8d7da; /* Fondo rojo claro para resaltar campos inválidos */
+    background-color: #f8d7da; 
 }
 
 input:valid {
-    border: 2px solid #28a745; /* Borde verde para campos válidos */
+    border: 2px solid #28a745; 
 }
 
 /* Estilos de botones */
 .btn {
     padding: 10px 20px;
-    width: auto; /* Auto para que el ancho sea el del contenido */
+    width: auto; 
     display: block;
-    margin: 10px auto; /* Margen arriba y abajo para centrar, izquierda y derecha auto */
-    font-size: 16px; /* Tamaño de fuente consistente para todos los botones */
-    text-align: center; /* Asegura que el texto está centrado */
+    margin: 10px auto; 
+    font-size: 16px; 
+    text-align: center; 
 }
 
 .login-button {
