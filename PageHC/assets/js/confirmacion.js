@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
             token: verificationCode
         };
 
-        fetch('http://localhost:3200/api/usuarios/confirmarregistro', {
+        fetch('http://localhost:3300/api/usuarios/confirmarregistro', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -1,4 +1,4 @@
-const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNTI4MzQ2OSwiZXhwIjoxNzE1MzAxNDY5fQ.sm-8S0Id9WwJu5ADeKQX0bcrd9cP5k9Jh0r4iiYB034';
+const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNjMyNzYxOCwiZXhwIjoxNzE2MzQ1NjE4fQ.UDITRZ9pJRXIT7dLem-Be3s0NOG7kPw9nSphEEo1OjI"';
 
 function insertarProducto(event) {
     event.preventDefault();
@@ -46,10 +46,16 @@ function insertarProducto(event) {
             body: JSON.stringify(datosCompra)
         })
         .then(response => {
-            if (!response.ok) {
-                return response.text().then(text => { throw new Error(text) }); 
-            }
-            return response.json();
+            return response.text().then(text => {
+                if (!response.ok) {
+                    throw new Error(text);
+                }
+                try {
+                    return JSON.parse(text);
+                } catch (e) {
+                    throw new Error('Respuesta no es JSON: ' + text);
+                }
+            });
         })
         .then(data => {
             console.log('Producto insertado:', data);

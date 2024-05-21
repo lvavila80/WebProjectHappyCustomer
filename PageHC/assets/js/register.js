@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
             rol: "ADMIN"
         };
 
-        fetch('http://localhost:3200/api/usuarios/insertarUsuario', {
+        fetch('http://localhost:3300/api/usuarios/insertarUsuario', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

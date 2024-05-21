@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNTI4OTY1NCwiZXhwIjoxNzE1MzA3NjU0fQ.ddD7e8JeKuTniLHFOYD4P318u-MN72dskoWwRDTFutA';
+    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNjMyNzYxOCwiZXhwIjoxNzE2MzQ1NjE4fQ.UDITRZ9pJRXIT7dLem-Be3s0NOG7kPw9nSphEEo1OjI"';
 
     function cargarDatos() {
         const url = 'http://localhost:3300/api/articulos/todos';
