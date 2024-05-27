@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNTI4MzQ2OSwiZXhwIjoxNzE1MzAxNDY5fQ.sm-8S0Id9WwJu5ADeKQX0bcrd9cP5k9Jh0r4iiYB034';
-
+    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNjgyOTMzOSwiZXhwIjoxNzE2ODQ3MzM5fQ.IBR54vP8xrKyyadJv7Lb59B17ug5Ly4jVEwJaxj1Ii0"';
+   
     const form = document.getElementById('modificarProducto');
 
     function getQueryParam(param) {
@@ -58,9 +58,6 @@ function cargarProducto(id, token) {
     })
     .catch(error => console.error('Error al cargar los datos del producto:', error));
 }
-
-
-
 
 
 function actualizarProducto(id, token) {
