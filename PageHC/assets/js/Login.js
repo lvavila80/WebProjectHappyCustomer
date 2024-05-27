@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
             passwd: passwordInput.value
         };
 
-        fetch('http://localhost:3200/api/usuarios/authUsuario', { // Cambiar localhost por la dirección correcta si es necesario
+        fetch('http://localhost:3300/api/usuarios/authUsuario', { // Cambiar localhost por la dirección correcta si es necesario
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
