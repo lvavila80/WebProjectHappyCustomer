@@ -3,11 +3,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const emailInput = document.getElementById('email');
     const verificationCodeInput = document.getElementById('verificationCode');
     const messageDiv = document.getElementById('message');
-    const goToHomeButton = document.getElementById('goToHome'); // Referencia al botón
+    const goToHomeButton = document.getElementById('goToHome');
 
     verificationForm.addEventListener('submit', function (event) {
         event.preventDefault();
-
         const email = emailInput.value.trim();
         const verificationCode = parseInt(verificationCodeInput.value);
 
@@ -33,18 +32,25 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             body: JSON.stringify(requestBody)
         })
-        .then(response => response.text())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Respuesta del servidor no es OK');
+            }
+            return response.text();
+        })
         .then(data => {
             messageDiv.textContent = data.trim();
             if (data.trim() === 'Usuario confirmado' || data.trim() === 'Usuario Confirmado.') {
-                goToHomeButton.disabled = false; // Habilita el botón
+                goToHomeButton.disabled = false;
                 goToHomeButton.addEventListener('click', function() {
-                    window.location.href = 'index.html'; // Redirige al usuario a index.html
+                    window.location.href = 'index.html';
                 });
             }
         })
         .catch(error => {
+            console.error('Error al procesar la solicitud:', error);
             messageDiv.textContent = 'Error al procesar la solicitud: ' + error.message;
         });
     });
 });
+
