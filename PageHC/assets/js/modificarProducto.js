@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNzQxNDE4NCwiZXhwIjoxNzE3NDMyMTg0fQ.BoyDTmBOmFugrySIHCnO71oueYfX1rsHFpKgi3ASaQc';
+    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNzQzNDU5NywiZXhwIjoxNzE3NDUyNTk3fQ.eOArtOVj-VtvdmB5sC9L0liAn8Otnrd4DARDqBgUkGw';
+ 
     const form = document.getElementById('modificarProducto');
 
     if (!form) {
@@ -74,10 +75,6 @@ function cargarProducto(id, token) {
                 console.error(`Elemento con ID ${field.id} no encontrado.`);
             }
         });
-
-        // Establecer valores por defecto para los campos ocultos
-        document.getElementById('categoria').value = data.categoria || 'defaultCategory';
-        document.getElementById('proveedor').value = data.proveedor || 'defaultSupplier';
     })
     .catch(error => {
         console.error('Error al cargar los datos del producto:', error);
@@ -93,9 +90,6 @@ function actualizarProducto(id, token) {
     const unidades = document.getElementById('unidades').value;
     const precio = document.getElementById('precio').value;
 
-    // Categoria predefinida
-    const categoria = 2;
-
     const productoActualizado = {
         articulo: {
             nombrearticulo: nombre,
@@ -108,8 +102,6 @@ function actualizarProducto(id, token) {
         idCategoria: 2
     };
 
-    console.log("Datos del producto a actualizar:", productoActualizado);
-
     fetch(`http://localhost:3300/api/articulos/actualizarArticulo/${id}`, {
         method: 'PUT',
         headers: {
@@ -121,7 +113,7 @@ function actualizarProducto(id, token) {
     .then(response => {
         if (response.ok) {
             alert('Producto actualizado correctamente');
-            window.location.href = 'modificarProducto.html';
+            window.location.href = 'inventario.html';
         } else {
             return response.text().then(text => { throw new Error(text) });
         }
@@ -131,4 +123,3 @@ function actualizarProducto(id, token) {
         alert('Error al actualizar el producto: ' + error.message);
     });
 }
-

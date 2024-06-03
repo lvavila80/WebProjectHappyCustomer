@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNzQxNDE4NCwiZXhwIjoxNzE3NDMyMTg0fQ.BoyDTmBOmFugrySIHCnO71oueYfX1rsHFpKgi3ASaQc'
+    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNzQzNDU5NywiZXhwIjoxNzE3NDUyNTk3fQ.eOArtOVj-VtvdmB5sC9L0liAn8Otnrd4DARDqBgUkGw';
  
     function insertarProducto(event) {
         event.preventDefault();
