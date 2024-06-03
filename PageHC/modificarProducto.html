@@ -90,7 +90,7 @@
                 <div class="cardHeader">
                     <h2>Modificar producto</h2>
                 </div>
-                <form id="insertarProducto">
+                <form id="modificarProducto">
                     <div class="form-row">
                         <div class="form-group col">
                             <label for="nombre">Nombre del producto</label>
@@ -100,7 +100,6 @@
                             <label for="marca">Marca</label>
                             <input type="text" id="marca" name="marca" required>
                         </div>
-
                     </div>
                     <div class="form-row">
                         <div class="form-group col">
@@ -122,34 +121,11 @@
                             <input type="number" id="precio" name="precio" required>
                         </div>
                     </div>
-
-                <!--<div class="form-row">
-                        <div class="form-group col">
-                            <label for="categoria">Categoría</label>
-                            <select id="categoria" required>
-                                <option value="">Seleccione una categoría</option>
-                                <option value="papeleria">Papeleria</option>
-                                <option value="ropa">Ropa</option>
-                                <option value="hogar">Hogar</option>
-                                <option value="juguetes">Juguetes</option>
-                                <option value="libros">Libros</option>
-                                <option value="tecnologia">Tecnologia</option>
-                            </select>
-                        </div>
-                        <div class="form-group col">
-                            <label for="proveedor">Proveedor</label>
-                            <select id="proveedor" required>
-                                <option value="">Seleccione un proveedor</option>
-                                <option value="supplier1">Suministros Papel S.A.S</option>
-                                <option value="supplier2">Limpieza total Ltda</option>
-                                <option value="supplier3">Tecnología Avanzada S.A</option>
-                                <option value="supplier4">Alimentos Deliciosos S.A.S</option>
-                            </select>
-                        </div>
-                    </div>-->
-
+                    <!-- Campos ocultos para categoría y proveedor -->
+                    <input type="hidden" id="categoria" name="categoria" value="defaultCategory">
+                    <input type="hidden" id="proveedor" name="proveedor" value="defaultSupplier">
                     <div class="button">
-                        <button type="submit" id="modificarProducto" class="btn">Modificar producto</button>
+                        <button type="submit" class="btn">Modificar producto</button>
                     </div>
                 </form>
             </div>

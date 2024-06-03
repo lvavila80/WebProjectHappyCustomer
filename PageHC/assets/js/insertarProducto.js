@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNjgyOTMzOSwiZXhwIjoxNzE2ODQ3MzM5fQ.IBR54vP8xrKyyadJv7Lb59B17ug5Ly4jVEwJaxj1Ii0';
-
+    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNzQxNDE4NCwiZXhwIjoxNzE3NDMyMTg0fQ.BoyDTmBOmFugrySIHCnO71oueYfX1rsHFpKgi3ASaQc'
+ 
     function insertarProducto(event) {
         event.preventDefault();
 
