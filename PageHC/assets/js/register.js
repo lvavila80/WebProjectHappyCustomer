@@ -49,9 +49,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         let usuarioData = {
-            correo: confirmarCorreo.value,
-            passwd: confirmarContrasena.value,
-            cedula: parseInt(cedula.value),
+            correo: correo.value,
+            passwd: contrasena.value,
+            cedula: parseInt(cedula.value, 10),  // Convierte a entero
             nombre: nombre.value,
             cambiarClave: false,
             rol: "ADMIN"
@@ -64,13 +64,22 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             body: JSON.stringify(usuarioData)
         })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                // En lugar de mostrar un alert, redirigir a la página de confirmación
-                window.location.href = 'confirmacionRegistro.html';  // Asegúrate de que esta es la URL correcta
-            } else {
-                throw new Error(data.message);
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Respuesta del servidor no fue exitosa: ' + response.statusText);
+            }
+            return response.text();  // Usa .text() en lugar de .json() si no estás seguro de que la respuesta es JSON
+        })
+        .then(text => {
+            try {
+                const data = JSON.parse(text);  // Intenta analizar el texto como JSON
+                if (data.success) {
+                    window.location.href = 'confirmacionRegistro.html';
+                } else {
+                    throw new Error(data.message);
+                }
+            } catch (error) {
+                throw new Error('Error al analizar JSON: ' + error.message);
             }
         })
         .catch(error => {
