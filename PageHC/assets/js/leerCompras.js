@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNzQ1MzYzMSwiZXhwIjoxNzE3NDcxNjMxfQ.0b9i0T5LDVjElB3QbJXBsULKzZMQglMEil1utUJY7Js';
+    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNzUxODQ4MiwiZXhwIjoxNzE3NTM2NDgyfQ.b89W9ucNHylylCWVVTg4x98NpZ3F4H9_8zLRw3iHylk';
     
     function cargarDatos() {
         const url = 'http://localhost:3300/api/compras/detalleCompra';

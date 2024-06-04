@@ -688,7 +688,7 @@ input:valid {
     padding-left: 80px;
 }
 
-.details .recentOrders #tablaCompras1 td, .details .recentOrders #tablaCompras2 td, .details .recentOrders #tablaCompras3 td {
+.details .recentOrders #tablaCompras1 td, .details .recentOrders #tablaCompras2 td, .details .recentOrders #tablaCompras3 td, .details .recentOrders #tablaProveedores td {
     text-align: center;
 }
 

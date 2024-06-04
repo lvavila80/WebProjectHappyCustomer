@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNzUxODQ4MiwiZXhwIjoxNzE3NTM2NDgyfQ.b89W9ucNHylylCWVVTg4x98NpZ3F4H9_8zLRw3iHylk';
-   
+
     function cargarDatos() {
-        const url = 'http://localhost:3300/api/articulos/todos';
+        const url = 'http://localhost:3300/api/proveedores/all';
         fetch(url, {
             method: 'GET',
             headers: {
@@ -17,17 +17,16 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(data => {
             console.log('Datos recibidos:', data);
-            const tbody = document.getElementById('tablaProductos').getElementsByTagName('tbody')[0];
+            const tbody = document.getElementById('tablaProveedores').getElementsByTagName('tbody')[0];
             tbody.innerHTML = '';
-            data.forEach(articuloInventario => {
+            data.forEach(proveedor => {
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
-                    <td>${articuloInventario.nombrearticulo}</td>
-                    <td>${articuloInventario.marca}</td>
-                    <td>${articuloInventario.modelo}</td>
-                    <td>${articuloInventario.color}</td>
-                    <td>${articuloInventario.unidadesdisponibles}</td>
-                    <td>${articuloInventario.valorunitario}</td>
+
+                    <td>${proveedor.nombre}</td>
+                    <td>${proveedor.identificacion}</td>
+                    <td>${proveedor.telefono}</td>
+                    <td>${proveedor.correo}</td>
                     <td>
                         <button class="btn-edit"><ion-icon name="pencil-outline"></ion-icon></button>
                         <button class="btn-delete"><ion-icon name="trash-outline"></ion-icon></button>
@@ -41,6 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Error al cargar datos: ' + error.message);
         });
     }
-    
+
     cargarDatos();
 });
