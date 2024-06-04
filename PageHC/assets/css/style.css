@@ -744,7 +744,7 @@ input:valid {
     margin-bottom: 20px;
 }
 
-input[type="text"], input[type="number"], select, input[type="file"] {
+input[type="text"], input[type="number"], select, input[type="file"], input[type="email"] {
     display: block; 
     width: calc(100% - 40px); 
     margin: 10px auto;
@@ -762,7 +762,7 @@ button[type="submit"] {
 }
 
 
-input[type="text"], input[type="number"], input[type="file"], select {
+input[type="text"], input[type="number"], input[type="file"], select, input[type="email"] {
     width: 100%; 
     padding: 10px; 
     margin-bottom: 15px; 

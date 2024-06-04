@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="assets/media/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPPY_COSTUMER</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="happy-outline"></ion-icon>
+                        </span>
+                        <span class="tittle">Happy Costumers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="tittle">Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Facturacion.html">
+                        <span class="icon">
+                            <ion-icon name="cart-outline"></ion-icon>
+                        </span>
+                        <span class="tittle">Facturación</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="inventario.html">
+                        <span class="icon">
+                            <ion-icon name="cube-outline"></ion-icon>
+                        </span>
+                        <span class="tittle">Inventario</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="compras.html">
+                        <span class="icon">
+                            <ion-icon name="cash-outline"></ion-icon>
+                        </span>
+                        <span class="tittle">Compras</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="reportes.html">
+                        <span class="icon">
+                            <ion-icon name="bar-chart-outline"></ion-icon>
+                        </span>
+                        <span class="tittle">Reportes</span>
+                    </a>
+                </li>
+                <li class="hovered">
+                    <a href="proveedores.html">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="tittle">Proveedores</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="topbar">
+            <div class="toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+            <div class="search">
+                <label>
+                    <input type="text" placeholder="Busqueda">
+                    <ion-icon name="search-outline"></ion-icon>
+                </label>
+            </div>
+            <div class="user">
+                <img src="./assets/media/customer01.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="detailsForm">
+            <div class="recentOrders">
+                <div class="cardHeader">
+                    <h2>Modificar proveedor</h2>
+                </div>
+                <form id="modificarProveedor">
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label for="nombre">Nombre del proveedor</label>
+                            <input type="text" id="nombre" required>
+                        </div>
+                        <div class="form-group col">
+                            <label for="identificacion">Identificación</label>
+                            <input type="number" id="identificacion" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label for="telefono">Telefono</label>
+                            <input type="number" id="telefono" required>
+                        </div>
+                        <div class="form-group col">
+                            <label for="correo">Correo</label>
+                            <input type="email" id="correo" required>
+                        </div>
+                    </div>
+
+                    <div class="button">
+                        <button type="submit" id="btnModificarProveedor" class="btn">Modificar proveedor</button>
+                    </div>
+                </form>
+                <div id="error-message" style="color: red;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/modificarProveedor.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
