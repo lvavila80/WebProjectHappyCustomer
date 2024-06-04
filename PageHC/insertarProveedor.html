@@ -37,8 +37,8 @@
                         <span class="tittle">Facturación</span>
                     </a>
                 </li>
-                <li class="hovered">
-                    <a href="inventario.html" >
+                <li>
+                    <a href="inventario.html">
                         <span class="icon">
                             <ion-icon name="cube-outline"></ion-icon>
                         </span>
@@ -61,7 +61,7 @@
                         <span class="tittle">Reportes</span>
                     </a>
                 </li>
-                <li>
+                <li class="hovered">
                     <a href="proveedores.html">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
@@ -74,7 +74,6 @@
     </div>
 
     <!--====================MAIN======================-->
-
     <div class="main">
         <div class="topbar">
             <div class="toggle">
@@ -91,82 +90,47 @@
             </div>
         </div>
 
-        <!--====================INVENTARIO======================-->
-
+        <!--====================PROVEEDOR======================-->
         <div class="detailsForm">
             <div class="recentOrders">
                 <div class="cardHeader">
                     <h2>Insertar proveedor</h2>
                 </div>
-                <form>
+                <form id="insertarProveedor">
                     <div class="form-row">
                         <div class="form-group col">
-                            <label for="productName">Nombre del proveedor</label>
-                            <input type="text" id="productName" required>
+                            <label for="nombre">Nombre del proveedor</label>
+                            <input type="text" id="nombre" required>
                         </div>
                         <div class="form-group col">
-                            <label for="category">*Producto que distribuye</label>
-                            <select id="category" required>
-                                <option value="">Seleccione una categoría</option>
-                                <option value="electronics">Electrónica</option>
-                                <option value="apparel">Ropa</option>
-                                <option value="home_appliances">Electrodomésticos</option>
-                                <option value="books">Libros</option>
-                                <option value="beauty_health">Belleza y Salud</option>
-                                <option value="sports">Deportes</option>
-                                <option value="outdoors">Aire Libre</option>
-                                <option value="toys">Juguetes</option>
-                                <option value="automotive">Automotor</option>
-                                <option value="grocery">Alimentos</option>
-                            </select>
+                            <label for="identificación">Identificación</label>
+                            <input type="number" id="identificación" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col">
-                            <label for="stockNumber">*RUT</label>
-                            <input type="number" id="stockNumber" required>
+                            <label for="telefono">Telefono</label>
+                            <input type="number" id="telefono" required>
                         </div>
                         <div class="form-group col">
-                            <label for="salePrice">*Dirección</label>
-                            <input type="text" id="salePrice" required>
+                            <label for="correo">Correo</label>
+                            <input type="text" id="correo" required>
                         </div>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col">
-                            <label for="NumberPhone">*Número de contacto</label>
-                            <input type="number" id="NumberPhone" required>
-                        </div>
-                        <div class="form-group col">
-                            <label for="salePrice">*Representante legal</label>
-                            <input type="text" id="salePrice" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group full-width">
-                            <label for="Correo">*Correo electrónico del p</label>
-                            <input type="email" id="correo" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group full-width">
-                            <label for="photo">Agregar Documentos</label>
-                            <input type="file" id="photo">
-                        </div>
-                    </div>
-                    <!-- Otros campos del formulario -->
+
                     <div class="button">
-                        <button type="submit" class="btn">Insertar proveedor</button>
+                        <button type="submit" id="btnInsertarProveedor" class="btn">Insertar proveedor</button>
                     </div>
                 </form>
+                <div id="error-message" style="color: red;"></div>
             </div>
         </div>
-
-
-    <!--====================SCRIPTS======================-->
-    <script src="./assets/js/main.js"></script>
-
+    </div>
+    <script src="./assets/js/insertarProveedor.js"></script>
     <!--====================IONICONS======================-->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
+</html>
+
 </html>

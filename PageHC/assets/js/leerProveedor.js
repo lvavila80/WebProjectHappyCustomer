@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
             data.forEach(proveedor => {
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
-
                     <td>${proveedor.nombre}</td>
                     <td>${proveedor.identificacion}</td>
                     <td>${proveedor.telefono}</td>
