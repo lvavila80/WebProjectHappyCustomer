@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const loginForm = document.getElementById('loginForm');
     const emailInput = document.getElementById('correo');
     const passwordInput = document.getElementById('contrasena');
-    const errorMessageDiv = document.getElementById('error-message'); // Asegúrate de que este elemento exista en tu HTML
+    const errorMessageDiv = document.getElementById('error-message'); 
+    const recoverAccountButton = document.getElementById('recoverAccountButton');
 
     loginForm.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -18,21 +19,31 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             body: JSON.stringify(loginData)
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Respuesta del servidor no fue exitosa: ' + response.statusText);
+            }
+            return response.json();
+        })
         .then(data => {
             if (data.success) {
                 console.log('Autenticación exitosa:', data.message);
-                window.location.href = 'index.html'; // Redireccionar al usuario a la página principal
+                window.location.href = 'index.html';
             } else {
                 console.log('Error en autenticación:', data.message);
                 errorMessageDiv.textContent = data.message;
-                errorMessageDiv.style.display = 'block'; // Muestra el mensaje de error
+                errorMessageDiv.style.display = 'block';
             }
         })
         .catch(error => {
             console.error('Error durante la autenticación:', error);
             errorMessageDiv.textContent = 'Error al procesar la solicitud. Intente de nuevo más tarde.';
-            errorMessageDiv.style.display = 'block'; // Muestra el mensaje de error
+            errorMessageDiv.style.display = 'block';
         });
+    });
+
+    // Asegurarse de que este botón redirige correctamente
+    recoverAccountButton.addEventListener('click', function() {
+        window.location.href = 'rehabilitarUsuario.html'; // Verifica que esta URL sea correcta
     });
 });
