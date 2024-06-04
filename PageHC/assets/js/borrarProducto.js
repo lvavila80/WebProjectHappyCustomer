@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNzQzNDU5NywiZXhwIjoxNzE3NDUyNTk3fQ.eOArtOVj-VtvdmB5sC9L0liAn8Otnrd4DARDqBgUkGw';
- 
+    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNzQ1MzYzMSwiZXhwIjoxNzE3NDcxNjMxfQ.0b9i0T5LDVjElB3QbJXBsULKzZMQglMEil1utUJY7Js';
+    
     function cargarDatos() {
         const url = 'http://localhost:3300/api/articulos/todos';
         fetch(url, {
