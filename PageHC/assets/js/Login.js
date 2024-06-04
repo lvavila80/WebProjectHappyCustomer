@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const loginForm = document.getElementById('loginForm');
     const emailInput = document.getElementById('correo');
     const passwordInput = document.getElementById('contrasena');
-    const messageDiv = document.getElementById('message'); // Asegúrate de que este elemento existe en tu HTML
+    const errorMessageDiv = document.getElementById('error-message'); // Asegúrate de que este elemento exista en tu HTML
 
     loginForm.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
             passwd: passwordInput.value
         };
 
-        fetch('http://localhost:3200/api/usuarios/authUsuario', { // Cambiar localhost por la dirección correcta si es necesario
+        fetch('http://localhost:3200/api/usuarios/authUsuario', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -22,17 +22,17 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(data => {
             if (data.success) {
                 console.log('Autenticación exitosa:', data.message);
-                window.location.href = 'index.html';
+                window.location.href = 'index.html'; // Redireccionar al usuario a la página principal
             } else {
                 console.log('Error en autenticación:', data.message);
-                messageDiv.textContent = data.message;
-                messageDiv.style.display = 'block'; // Asegúrate de que el mensaje se muestre
+                errorMessageDiv.textContent = data.message;
+                errorMessageDiv.style.display = 'block'; // Muestra el mensaje de error
             }
         })
         .catch(error => {
             console.error('Error durante la autenticación:', error);
-            messageDiv.textContent = 'Error al procesar la solicitud.';
-            messageDiv.style.display = 'block'; // Asegúrate de que el mensaje se muestre
+            errorMessageDiv.textContent = 'Error al procesar la solicitud. Intente de nuevo más tarde.';
+            errorMessageDiv.style.display = 'block'; // Muestra el mensaje de error
         });
     });
 });
