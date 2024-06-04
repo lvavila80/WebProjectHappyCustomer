@@ -21,14 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     <td>${proveedor.telefono}</td>
                     <td>${proveedor.correo}</td>
                     <td>
-                        <button class="btn-edit" data-id="${proveedor.id}"><ion-icon name="pencil-outline"></ion-icon></button>
-                        <button class="btn-delete" data-id="${proveedor.id}"><ion-icon name="trash-outline"></ion-icon></button>
+
                     </td>
                 `;
                 tablaProveedoresBody.appendChild(row);
             });
 
-            agregarEventosEditar();
             agregarEventosEliminar();
         })
         .catch(error => {
@@ -37,18 +35,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function agregarEventosEditar() {
-        document.querySelectorAll('.btn-edit').forEach(button => {
-            button.addEventListener('click', function() {
-                const idProveedor = this.getAttribute('data-id');
-                window.location.href = `modificarProveedor.html?id=${idProveedor}`;
-            });
-        });
-    }
-
     function agregarEventosEliminar() {
+        console.log("Agregando eventos de eliminar");
         document.querySelectorAll('.btn-delete').forEach(button => {
             button.addEventListener('click', function() {
+                console.log("Se hizo clic en el botón de eliminar");
                 const idProveedor = this.getAttribute('data-id');
                 eliminarProveedor(idProveedor);
             });
@@ -84,4 +75,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
     cargarDatos();
 });
-
