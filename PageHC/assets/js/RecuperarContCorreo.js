@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
         const email = emailInput.value;
 
+        messageDiv.textContent = "Se envió a su correo electrónico el token para recuperar su contraseña.";
+        messageDiv.style.color = 'green';
+        messageVerificarDiv.style.display = 'block';
+
         fetch('http://localhost:3200/api/usuarios/correoReestablecerContrasenia', {
             method: 'POST',
             headers: {
@@ -21,8 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return response.json();
         })
         .then(data => {
-            messageDiv.textContent = data || "Instrucciones enviadas a su correo electrónico.";
-            messageDiv.style.color = 'green';
+            messageDiv.textContent = data.message || "Revise su correo electrónico para continuar con la recuperación de la contraseña.";
         })
         .catch(error => {
             console.error('Error:', error);
