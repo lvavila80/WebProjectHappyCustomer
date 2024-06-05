@@ -999,20 +999,36 @@ body {
 
 
 input:invalid {
-    border: 2px solid #ff0000; /* Borde rojo para campos inválidos */
+    border: 2px solid #ff0000;
     background-color: #f8d7da; 
 
 }
 
-/* Estilos para cuando el usuario selecciona el campo */
+
 input:invalid:focus {
-    background-color: #f8d7da; /* Un fondo rojo claro para cuando el campo está enfocado */
+    background-color: #f8d7da; 
 }
 
-/* Opcional: Estilos para cuando el campo es válido */
+
 input:valid {
-    border: 2px solid #28a745; /* Un borde verde para campos válidos */
+    border: 2px solid #28a745; 
 }
+
+
+.sales-summary {
+    margin-top: 20px;
+    text-align: right;
+    font-size: 0.9em; 
+}
+
+.sales-summary h4 {
+    margin: 0;
+    font-size: 1.2em;  
+    font-weight: bold;
+}
+
+
+
 
 
 
