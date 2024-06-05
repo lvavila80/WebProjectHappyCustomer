@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(response => {
             if (!response.ok) {
-                throw new Error('Respuesta del servidor no fue exitosa: ' + response.statusText);
+                return response.json().then(data => Promise.reject('Error en la autenticación: ' + data.message));
             }
             return response.json();
         })
@@ -30,20 +30,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log('Autenticación exitosa:', data.message);
                 window.location.href = 'index.html';
             } else {
-                console.log('Error en autenticación:', data.message);
-                errorMessageDiv.textContent = data.message;
-                errorMessageDiv.style.display = 'block';
+                throw new Error('Error en autenticación: ' + data.message);
             }
         })
         .catch(error => {
             console.error('Error durante la autenticación:', error);
-            errorMessageDiv.textContent = 'Error al procesar la solicitud. Intente de nuevo más tarde.';
+            errorMessageDiv.textContent = error.toString();
             errorMessageDiv.style.display = 'block';
         });
     });
 
-    // Asegurarse de que este botón redirige correctamente
-    recoverAccountButton.addEventListener('click', function() {
-        window.location.href = 'rehabilitarUsuario.html'; // Verifica que esta URL sea correcta
-    });
+    if (recoverAccountButton) {
+        recoverAccountSomething.addEventListener('click', function() {
+            window.location.href = 'rehabilitarUsuario.html'; // Verifica que esta URL sea correcta
+        });
+    }
 });
