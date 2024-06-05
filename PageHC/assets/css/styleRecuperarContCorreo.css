@@ -28,7 +28,7 @@ button {
     width: 100%;
     padding: 10px;
     margin-top: 20px;
-    background-color: #2b6e0b;
+    background-color: #057b71;
     color: white;
     border: none;
     border-radius: 4px;
@@ -43,3 +43,29 @@ button:hover {
     margin-top: 20px;
     color: red;
 }
+
+/* Estilo para el botón de "Ya tengo el código de recuperación" */
+.btn-login {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #1d4d02;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* Estilo para el botón de "No me he registrado" */
+.btn-register {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #1d4d02;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
