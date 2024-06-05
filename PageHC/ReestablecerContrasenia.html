@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reestablecer Contraseña - Happy Customer</title>
+    <link rel="stylesheet" href="./assets/css/styleReestablecerContraseniaX.css">
+</head>
+<body>
+    <div class="verification-container">
+        <h3>Reestablecer Contraseña</h3>
+        <form id="resetForm">
+            <input type="email" id="email" placeholder="Correo electrónico" required>
+            <input type="text" id="token" placeholder="Código de recuperación" required>
+            <input type="password" id="newPassword" placeholder="Nueva contraseña" required>
+            <input type="password" id="confirmPassword" placeholder="Confirmar nueva contraseña" required>
+            <button type="submit">Enviar</button>   
+            
+        </form>
+        <button onclick="window.location.href='Login.html';" class="btn btn-secondary btn-login">Iniciar sesión</button>
+        <button onclick="window.location.href='HomePage.html';" class="btn btn-primary">Ir a página principal</button>
+
+
+        <div id="message"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./assets/js/ReestablecerContrasenia.js"></script>
+</body>
+</html>

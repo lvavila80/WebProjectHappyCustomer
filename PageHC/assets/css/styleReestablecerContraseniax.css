@@ -22,14 +22,17 @@ body::before {
 }
 
 .verification-container {
-    background: white;
+    position: relative;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 300px;
+    border-radius: 8px;
+    z-index: 1;
 }
 
-input[type="text"], input[type="email"] {
+
+input[type="text"], input[type="email"], input[type="password"] {
     width: calc(100% - 20px);
     padding: 10px;
     margin-top: 10px;
@@ -50,29 +53,6 @@ button {
 
 button:hover {
     background-color: #42bb54;
-}
-
-.buttonnext {
-    background-color: #4CAF50; /* Verde */
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-top: 10px; /* Modificado para añadir un margen superior para distanciar del mensaje */
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-.buttonnext:disabled {
-    background-color: #ccc; /* Gris para mostrar que está deshabilitado */
-    cursor: default;
-}
-
-.buttonnext:hover {
-    background-color: #45a049; /* Un verde más oscuro al hacer hover, solo si está habilitado */
 }
 
 #message {

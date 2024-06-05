@@ -4,70 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/styleRegister.css">
-    <title>Registro - Happy Customer</title>
+    <link rel="stylesheet" href="./assets/css/styleLogin.css"> <!-- Asegúrate de que el archivo CSS tiene este nombre -->
+    <title>Iniciar Sesión - Happy Customer</title>
 </head>
 <body>
-    <div class="container-fluid register-page">
+    <div class="container-fluid register-page"> <!-- Se mantiene la misma clase para reutilizar estilos -->
         <div class="row no-gutters">
             <div class="col-lg-6 form-section d-flex flex-column justify-content-center">
                 <center>
-                    <h1>¡Bienvenido!</h1>
+                    <h1>¡Bienvenido de nuevo!</h1>
                     <h2>Happy Customer</h2>
-                    <h3>Elevate Your Shopping Experience</h3>
-                    <section>
-                        <h4>Para comenzar a usar nuestra herramienta, completa el formulario de registro</h4>
-                    </section>
+                    <h3>Enhance Your Shopping Experience</h3>
                 </center>
 
                 <div class="container-fluid">
-                    <form method="POST" id="formRegistro">
+                    <form method="POST" id="loginForm">
                         <div class="form-group">
-                            <input type="text" id="nombre" name="nombre" class="form-control input-field" placeholder="Nombre*" required onpaste="return false">
-                            <span class="error-message">Es necesario que indiques tu nombre.</span>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="email" id="correo" name="correo" class="form-control input-field" placeholder="Correo electrónico*" required onpaste="return false">
-                            <span class="error-message">Es necesario que indiques tu correo electrónico.</span>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="email" id="confirmar-correo" name="confirmar-correo" class="form-control input-field" placeholder="Confirmar correo electrónico*" required onpaste="return false">
-                            <div class="alert error-alert" style="display:none;">Los correos electrónicos no coinciden.</div>
+                            <input type="email" id="correo" name="correo" class="form-control input-field" placeholder="Correo electrónico*" required>
+                            <span class="error-message">Introduce tu correo electrónico.</span>
                         </div>
 
                         <div class="form-group">
                             <input type="password" id="contrasena" name="contrasena" class="form-control input-field" placeholder="Contraseña*" required>
-                            <div id="password-error" class="alert error-alert" style="display:none;">La contraseña no cumple con los requisitos de seguridad.</div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <input type="password" id="confirmar-contrasena" name="confirmar-contrasena" class="form-control input-field" placeholder="Confirmar contraseña*" required>
-                            <div class="alert error-alert" style="display:none;">Las contraseñas no coinciden.</div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <input type="number" id="cedula" name="cedula" class="form-control input-field" placeholder="Cédula*" required>
+                            <span class="error-message">Introduce tu contraseña.</span>
+                            <a href="RecuperarContCorreo.html" class="forgot-password-link">¿Olvidaste tu contraseña?</a>
+
+                            <a href="RehabilitarUsuario.html" class="forgot-password-link">Recupere su cuenta</a>
                         </div>
 
-                        <div class="form-group form-check">
-                            <label class="form-check-label" for="terminos">
-                                <input type="checkbox" id="terminos" name="terminos" class="form-check-input">
-                                Acepta nuestros términos y condiciones
-                            </label>
+                        <div class="form-group">
+                            <button type="submit" class="btn login-button">Iniciar Sesión</button>
                         </div>
-                        <button type="submit" class="btn submit-button">¡Regístrate!</button>
                     </form>
+                    <div id="error-message" class="alert alert-danger" role="alert" style="display: none;">
+
+                    </div>
+                    
                 </div>
             </div>
 
             <div class="col-lg-6 image-section d-flex flex-column justify-content-center">
                 <figure>
-                    <img src="https://media.istockphoto.com/id/1278695302/es/vector/contabilidad-finanzas-datos-bancarios-peque%C3%B1os-personajes-contables-alrededor-de-enormes.jpg?s=612x612&w=0&k=20&c=Z3Z22cuP75v9W-aojeykALGNoQI2XPiLS4peONAuWo0=" alt="Imagen de registro" class="img-fluid">
+                    <img src="https://media.istockphoto.com/id/1278695302/es/vector/contabilidad-finanzas-datos-bancarios-peque%C3%B1os-personajes-contables-alrededor-de-enormes.jpg?s=612x612&w=0&k=20&c=Z3Z22cuP75v9W-aojeykALGNoQI2XPiLS4peONAuWo0=" alt="Imagen de inicio de sesión" class="img-fluid">
                 </figure>
-                <h5>¿Ya estás registrado?</h5>
-                <button type="button" class="btn login-button">Iniciar sesión</button>
+                <h5>¿Aún no estás registrado?</h5>
+                <a href="RegistroUsuario.html" class="btn register-button">Regístrate</a>
             </div>
         </div>
     </div>
@@ -76,16 +57,16 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Confirmación de Registro</h5>
+                    <h5 class="modal-title">Error de Inicio de Sesión</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    Verifique su correo electrónico para confirmar su registro.
+                <div class="modal-body" id="message">
+                    Error de inicio de sesión. Verifica tus datos e inténtalo de nuevo.
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Aceptar</button>
+                    <button type="row" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>
@@ -94,7 +75,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="./assets/js/register.js"></script>
+    <script src="./assets/js/login.js"></script>
 </body>
 </html>
-
