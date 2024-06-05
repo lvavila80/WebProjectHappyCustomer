@@ -57,42 +57,46 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        // Further form validation before submission
-        const isPasswordValid = validatePasswordStrength() && validatePasswordMatch();
-        const isEmailValid = validateEmailMatch();
-        const areTermsChecked = terminos.checked;
+        // Ocultar mensajes de error
+        passwordErrorDiv.style.display = 'none';
 
-        if (isPasswordValid && isEmailValid && areTermsChecked) {
-            const usuarioData = {
-                nombre: nombre.value,
-                correo: correo.value,
-                passwd: contrasena.value,
-                cedula: parseInt(cedula.value),
-                cambiarClave: false,
-                rol: "ADMIN"
-            };
-
-            fetch('http://localhost:3200/api/usuarios/insertarUsuario', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(usuarioData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    window.location.href = 'confirmacionRegistro.html';
-                } else {
-                    throw new Error(data.message);
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('Ocurrió un error al enviar los datos: ' + error.message);
-            });
-        } else {
-            alert('Por favor, asegúrese de que todos los campos están correctamente llenados y los términos y condiciones aceptados.');
+        if (correo.value !== confirmarCorreo.value) {
+            alert("Los correos no coinciden. Por favor, confirme su correo electrónico.");
+            return;
         }
+
+        if (!validatePasswordStrength() || !validatePasswordMatch()) {
+            return;
+        }
+
+        let usuarioData = {
+            correo: confirmarCorreo.value,
+            passwd: confirmarContrasena.value,
+            cedula: parseInt(cedula.value),
+            nombre: nombre.value,
+            cambiarClave: false,
+            rol: "ADMIN"
+        };
+
+        fetch('http://localhost:3200/api/usuarios/insertarUsuario', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(usuarioData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // En lugar de mostrar un alert, redirigir a la página de confirmación
+                window.location.href = 'confirmacionRegistro.html';  // Asegúrate de que esta es la URL correcta
+            } else {
+                throw new Error(data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Ocurrió un error al enviar los datos: ' + error.message);
+        });
     });
 });

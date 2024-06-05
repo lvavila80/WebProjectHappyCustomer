@@ -1,0 +1,71 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.verification-container {
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px; /* Más amplio para mejor legibilidad */
+}
+
+input[type="email"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #057b71;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #42bb54;
+}
+
+#message {
+    margin-top: 20px;
+    color: red;
+}
+
+/* Estilo para el botón de "Ya tengo el código de recuperación" */
+.btn-login {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #1d4d02;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* Estilo para el botón de "No me he registrado" */
+.btn-register {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #1d4d02;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+

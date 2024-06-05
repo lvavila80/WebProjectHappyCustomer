@@ -2,16 +2,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const loginForm = document.getElementById('loginForm');
     const emailInput = document.getElementById('correo');
     const passwordInput = document.getElementById('contrasena');
-    const messageDiv = document.getElementById('message'); // Asegúrate de que este elemento existe en tu HTML
+    const errorMessageDiv = document.getElementById('error-message');
+    const recoverAccountButton = document.getElementById('recoverAccountButton');
 
-    loginForm.addEventListener('submit', function (event) {
-        event.preventDefault();
-        const loginData = {
-            correo: emailInput.value,
-            passwd: passwordInput.value
-        };
+    if (loginForm && emailInput && passwordInput && errorMessageDiv) {
+        loginForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const loginData = {
+                correo: emailInput.value,
+                passwd: passwordInput.value
+            };
 
-        fetch('http://localhost:3300/api/usuarios/authUsuario', { // Cambiar localhost por la dirección correcta si es necesario
+        fetch('http://localhost:3200/api/usuarios/authUsuario', { // Cambiar localhost por la dirección correcta si es necesario
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -34,5 +36,11 @@ document.addEventListener('DOMContentLoaded', function () {
             messageDiv.textContent = 'Error al procesar la solicitud.';
             messageDiv.style.display = 'block'; // Asegúrate de que el mensaje se muestre
         });
-    });
+    }
+
+    if (recoverAccountButton) {
+        recoverAccountButton.addEventListener('click', function() {
+            window.location.href = 'rehabilitarUsuario.html';
+        });
+    }
 });
