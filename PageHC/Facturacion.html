@@ -35,10 +35,18 @@
                         <span class="tittle">Inicio</span>
                     </a>
                 </li>
+                <li>
+                    <a href="venta.html">
+                        <span class="icon">
+                            <ion-icon name="cash-outline"></ion-icon>
+                        </span>
+                        <span class="tittle">Venta</span>
+                    </a>
+                </li>
                 <li class="hovered">
                     <a href="Facturacion.html">
                         <span class="icon">
-                            <ion-icon name="cart-outline"></ion-icon>
+                            <ion-icon name="document-text-outline"></ion-icon>
                         </span>
                         <span class="tittle">Facturación</span>
                     </a>
@@ -49,6 +57,14 @@
                             <ion-icon name="cube-outline"></ion-icon>
                         </span>
                         <span class="tittle">Inventario</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="compras.html">
+                        <span class="icon">
+                            <ion-icon name="cash-outline"></ion-icon>
+                        </span>
+                        <span class="tittle">Compras</span>
                     </a>
                 </li>
                 <li>
@@ -89,146 +105,76 @@
             </div>
         </div>
 
-        <!--====================INVENTARIO======================-->
+        <!--====================VENTAS======================-->
+
         <div class="details" style="display: flex; justify-content: space-between;">
             <div class="recentOrders" style="flex: 1; margin-right: 20px;">
                 <div class="cardHeader">
-                    <h2>Historial de facturación</h2>
+                    <h2>Por confirmar</h2>
                 </div>
-                <table id="example" class="display nowrap dt-responsive" style="width:100%">
+                <table id="tablaVentas1">
                     <thead>
                         <tr>
-                            <td>Codigo de factura</td>
-                            <td>Tipo de factura</td>
-                            <td>Método de pago</td>
-                            <td>Proveedor</td>
-                            <td>Total</td>
+                            <th>IdVenta</th>
+                            <th>IdArticulo</th>
+                            <th>Unidades</th>
+                            <th>Valor Total</th>
+                            <th>Fecha</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>FAC-00123</td>
-                            <td>Electrónica</td>
-                            <td>Tarjeta de crédito</td>
-                            <td>Tecnologías Innovadoras S.A.</td>
-                            <td>$3,500.00</td>
-                        </tr>
-                        <tr>
-                            <td>FAC-00124</td>
-                            <td>Alimentación</td>
-                            <td>Efectivo</td>
-                            <td>Supermercados La Canasta</td>
-                            <td>$1,250.00</td>
-                        </tr>
-                        <tr>
-                            <td>FAC-00125</td>
-                            <td>Construcción</td>
-                            <td>Transferencia bancaria</td>
-                            <td>Construcciones y Diseños</td>
-                            <td>$7,800.00</td>
-                        </tr>
-                        <tr>
-                            <td>FAC-00126</td>
-                            <td>Servicios</td>
-                            <td>Cheque</td>
-                            <td>Limpieza Brillante S.A.</td>
-                            <td>$2,300.00</td>
-                        </tr>
-                        <tr>
-                            <td>FAC-00127</td>
-                            <td>Textiles</td>
-                            <td>Tarjeta de débito</td>
-                            <td>Textiles y Moda S.L.</td>
-                            <td>$2,100.00</td>
-                        </tr>
-                        <tr>
-                            <td>FAC-00128</td>
-                            <td>Electrodomésticos</td>
-                            <td>Transferencia bancaria</td>
-                            <td>ElectroHogar S.A.</td>
-                            <td>$5,750.00</td>
-                        </tr>
-                        <tr>
-                            <td>FAC-00129</td>
-                            <td>Librería</td>
-                            <td>Efectivo</td>
-                            <td>Libros y Libros Ltda</td>
-                            <td>$430.00</td>
-                        </tr>
-                        <tr>
-                            <td>FAC-00130</td>
-                            <td>Automoción</td>
-                            <td>Financiación</td>
-                            <td>AutoSeguro S.A.</td>
-                            <td>$15,000.00</td>
-                        </tr>
-                        <tr>
-                            <td>FAC-00131</td>
-                            <td>Tecnología</td>
-                            <td>PayPal</td>
-                            <td>Innovatech Solutions</td>
-                            <td>$3,200.00</td>
-                        </tr>
-                        <tr>
-                            <td>FAC-00132</td>
-                            <td>Restauración</td>
-                            <td>Tarjeta de crédito</td>
-                            <td>Gastronomía Plaza S.A.</td>
-                            <td>$890.00</td>
-                        </tr>
-                        <tr>
-                            <td>FAC-00133</td>
-                            <td>Entretenimiento</td>
-                            <td>Criptomonedas</td>
-                            <td>Eventos y Conciertos S.A.</td>
-                            <td>$4,500.00</td>
-                        </tr>
                     </tbody>
                 </table>
-                <div class="button-container button-container-flex">
-                    <div class="button">
-                        <a href="InsertarFactura.html" class="btn">
-                            <span class="icon">
-                                <ion-icon name="file-tray-outline"></ion-icon>
-                            </span>
-                            Nueva factura
-                        </a>
-                    </div>
-                    <div class="button">
-                        <a href="insertarProducto.html" class="btn">
-                            <span class="icon">
-                                <ion-icon name="file-tray-outline"></ion-icon>
-                            </span>
-                            Cierre de caja
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
         
-        <script>
-        $(document).ready(function() {
-            $('#example').DataTable({
-                responsive: true,
-                lengthMenu: [ [5, 10, 15, -1], [5, 10, 15, "Todos"] ]
-            });
-        });
-        </script>
-
-            <!--====================NUEVOS PRODUCTOS======================-->
-
-            
-
+        <div class="details" style="display: flex; justify-content: space-between;">
+            <div class="recentOrders" style="flex: 1; margin-right: 20px;">
+                <div class="cardHeader">
+                    <h2>Ventas realizadas</h2>
+                </div>
+                <table id="tablaVentas2">
+                    <thead>
+                        <tr>
+                            <th>IdVenta</th>
+                            <th>IdArticulo</th>
+                            <th>Unidades</th>
+                            <th>Valor Total</th>
+                            <th>Fecha</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>            
+        <div class="details" style="display: flex; justify-content: space-between;">
+            <div class="recentOrders" style="flex: 1; margin-right: 20px;">
+                <div class="cardHeader">
+                    <h2>Reversadas</h2>
+                </div>
+                <table id="tablaVentas3">
+                    <thead>
+                        <tr>
+                            <th>IdVenta</th>
+                            <th>IdArticulo</th>
+                            <th>Unidades</th>
+                            <th>Valor Total</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
         </div>
-
-        
-
     </div>
-
 
     <!--====================SCRIPTS======================-->
     <script src="./assets/js/main.js"></script>
-
+    <script src="./assets/js/detalleVentas.js"></script>
     <!--====================IONICONS======================-->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

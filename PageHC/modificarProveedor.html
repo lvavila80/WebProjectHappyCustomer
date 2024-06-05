@@ -5,11 +5,9 @@
     <link rel="icon" href="assets/media/logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HAPPY_COSTUMER</title>
-    <!--====================STYLES======================-->
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <!--====================NAVEGACIÓN======================-->
     <div class="container">
         <div class="navigation">
             <ul>
@@ -30,6 +28,14 @@
                     </a>
                 </li>
                 <li>
+                    <a href="venta.html">
+                        <span class="icon">
+                            <ion-icon name="cash-outline"></ion-icon>
+                        </span>
+                        <span class="tittle">Venta</span>
+                    </a>
+                </li>
+                <li>
                     <a href="Facturacion.html">
                         <span class="icon">
                             <ion-icon name="cart-outline"></ion-icon>
@@ -37,12 +43,20 @@
                         <span class="tittle">Facturación</span>
                     </a>
                 </li>
-                <li class="hovered">
+                <li>
                     <a href="inventario.html">
                         <span class="icon">
                             <ion-icon name="cube-outline"></ion-icon>
                         </span>
                         <span class="tittle">Inventario</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="compras.html">
+                        <span class="icon">
+                            <ion-icon name="cash-outline"></ion-icon>
+                        </span>
+                        <span class="tittle">Compras</span>
                     </a>
                 </li>
                 <li>
@@ -53,7 +67,7 @@
                         <span class="tittle">Reportes</span>
                     </a>
                 </li>
-                <li>
+                <li class="hovered">
                     <a href="proveedores.html">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
@@ -64,8 +78,6 @@
             </ul>
         </div>
     </div>
-
-    <!--====================MAIN======================-->
 
     <div class="main">
         <div class="topbar">
@@ -83,89 +95,43 @@
             </div>
         </div>
 
-        <!--====================INVENTARIO======================-->
-
         <div class="detailsForm">
             <div class="recentOrders">
                 <div class="cardHeader">
-                    <h2>Modificar producto</h2>
+                    <h2>Modificar proveedor</h2>
                 </div>
-                <form id="insertarProducto">
+                <form id="modificarProveedor">
                     <div class="form-row">
                         <div class="form-group col">
-                            <label for="nombre">Nombre del producto</label>
+                            <label for="nombre">Nombre del proveedor</label>
                             <input type="text" id="nombre" required>
                         </div>
                         <div class="form-group col">
-                            <label for="marca">Marca</label>
-                            <input type="text" id="marca" required>
-                        </div>
-
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col">
-                            <label for="modelo">Modelo</label>
-                            <input type="text" id="modelo" required>
-                        </div>
-                        <div class="form-group col">
-                            <label for="color">Color</label>
-                            <input type="text" id="color" required>
+                            <label for="identificacion">Identificación</label>
+                            <input type="number" id="identificacion" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col">
-                            <label for="unidades">Unidades compradas</label>
-                            <input type="number" id="unidades" required>
+                            <label for="telefono">Telefono</label>
+                            <input type="number" id="telefono" required>
                         </div>
                         <div class="form-group col">
-                            <label for="precio">Precio de venta unidad</label>
-                            <input type="number" id="precio" required>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group col">
-                            <label for="categoria">Categoría</label>
-                            <select id="categoria" required>
-                                <option value="">Seleccione una categoría</option>
-                                <option value="papeleria">Papeleria</option>
-                                <option value="ropa">Ropa</option>
-                                <option value="hogar">Hogar</option>
-                                <option value="juguetes">Juguetes</option>
-                                <option value="libros">Libros</option>
-                                <option value="tecnologia">Tecnologia</option>
-                            </select>
-                        </div>
-                        <div class="form-group col">
-                            <label for="proveedor">Proveedor</label>
-                            <select id="proveedor" required>
-                                <option value="">Seleccione un proveedor</option>
-                                <option value="supplier1">Suministros Papel S.A.S</option>
-                                <option value="supplier2">Limpieza total Ltda</option>
-                                <option value="supplier3">Tecnología Avanzada S.A</option>
-                                <option value="supplier4">Alimentos Deliciosos S.A.S</option>
-                            </select>
+                            <label for="correo">Correo</label>
+                            <input type="email" id="correo" required>
                         </div>
                     </div>
 
                     <div class="button">
-                        <button type="submit" id="modificarProducto" class="btn">Modificar producto</button>
+                        <button type="submit" id="btnModificarProveedor" class="btn">Modificar proveedor</button>
                     </div>
                 </form>
+                <div id="error-message" style="color: red;"></div>
             </div>
-
-
-            <!--====================NUEVOS PRODUCTOS======================-->            
-
-        </div>       
-
+        </div>
     </div>
 
-    <script src="./assets/js/deletePost.js"></script>
-    <!--====================SCRIPTS======================-->
-    <script src="./assets/js/main.js"></script>
-
-    <!--====================IONICONS======================-->
+    <script src="./assets/js/modificarProveedor.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
