@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-<<<<<<< HEAD:PageHC/assets/js/deletePost.js
     const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNjMyNzYxOCwiZXhwIjoxNzE2MzQ1NjE4fQ.UDITRZ9pJRXIT7dLem-Be3s0NOG7kPw9nSphEEo1OjI"';
 
 =======

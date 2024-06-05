@@ -1,12 +1,7 @@
-<<<<<<< HEAD
 const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNjMyNzYxOCwiZXhwIjoxNzE2MzQ1NjE4fQ.UDITRZ9pJRXIT7dLem-Be3s0NOG7kPw9nSphEEo1OjI"';
-=======
-document.addEventListener('DOMContentLoaded', function() {
-    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNzYxMTU3MiwiZXhwIjoxNzE3NjI5NTcyfQ.zSu0IdsTbxp5FY8_0fOTchIsmby6MpRpylWE2nBtJFc';
-    
-    function insertarProducto(event) {
-        event.preventDefault();
->>>>>>> Laura
+
+function insertarProducto(event) {
+    event.preventDefault();
 
         const nombre = document.getElementById('nombre').value;
         const marca = document.getElementById('marca').value;
@@ -74,16 +69,10 @@ document.addEventListener('DOMContentLoaded', function() {
             body: JSON.stringify(datosCompra)
         })
         .then(response => {
-            return response.text().then(text => {
-                if (!response.ok) {
-                    throw new Error(text);
-                }
-                try {
-                    return JSON.parse(text);
-                } catch (e) {
-                    throw new Error('Respuesta no es JSON: ' + text);
-                }
-            });
+            if (!response.ok) {
+                return response.text().then(text => { throw new Error(text) }); 
+            }
+            return response.json();
         })
         .then(data => {
             console.log('Producto insertado:', data);
