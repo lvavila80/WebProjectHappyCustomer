@@ -1008,6 +1008,62 @@ input:valid {
     border: 2px solid #28a745; /* Un borde verde para campos válidos */
 }
 
+
+
+
+
+/* Añade este CSS a tu archivo style.css */
+
+.sales-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sales-section h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+#salesTable {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+#salesTable th, #salesTable td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.sales-summary {
+    text-align: right;
+}
+
+.sales-summary h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#procesarVenta {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#procesarVenta:hover {
+    background-color: #45a049;
+}
+
+
+
+
 /*--====================RESPONSIVE======================*/
 
 @media(max-width:991px){

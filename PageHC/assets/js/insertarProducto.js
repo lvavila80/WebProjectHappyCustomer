@@ -38,11 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 idUsuario: 1
             };
 
-            // Imprimir el objeto datosCompra para verificar
             console.log('datosCompra:', datosCompra);
 
             try {
-                // Convertir el objeto a JSON y verificar la salida
                 const jsonBody = JSON.stringify(datosCompra);
                 console.log('JSON Body:', jsonBody);
 
@@ -52,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${token}`
                     },
-                    body: jsonBody // Aquí convertimos el objeto datosCompra a JSON
+                    body: jsonBody
                 })
                 .then(response => {
                     if (!response.ok) {
