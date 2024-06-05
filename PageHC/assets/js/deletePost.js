@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNTI4OTY1NCwiZXhwIjoxNzE1MzA3NjU0fQ.ddD7e8JeKuTniLHFOYD4P318u-MN72dskoWwRDTFutA';
 
     function cargarDatos() {
-        const url = 'http://localhost:3300/api/articulos/todos';
+        const url = 'http://localhost:3200/api/articulos/todos';
         fetch(url, {
             method: 'GET',
             headers: {
