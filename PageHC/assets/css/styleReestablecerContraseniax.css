@@ -1,20 +1,36 @@
 body, html {
     height: 100%;
     margin: 0;
+    padding: 0;
+    overflow: hidden;
     font-family: Arial, sans-serif;
-    background: #f4f4f4;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://cdn.goconqr.com/uploads/node/image/78933866/desktop_0b1f978a-9d6c-4cd3-82a0-be129ee46279.jpg') no-repeat center center;
+    background-size: cover;
+    filter: blur(8px);
+    z-index: -1;
 }
 
 .verification-container {
-    background: white;
+    position: relative;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 300px;
+    border-radius: 8px;
+    z-index: 1;
 }
+
 
 input[type="text"], input[type="email"], input[type="password"] {
     width: calc(100% - 20px);
