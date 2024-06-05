@@ -1,7 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNTI4MzQ2OSwiZXhwIjoxNzE1MzAxNDY5fQ.sm-8S0Id9WwJu5ADeKQX0bcrd9cP5k9Jh0r4iiYB034';
+    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsbXJpYW5vNDFAdWNhdG9saWNhLmVkdS5jbyIsImlhdCI6MTcxNjMyNzYxOCwiZXhwIjoxNzE2MzQ1NjE4fQ.UDITRZ9pJRXIT7dLem-Be3s0NOG7kPw9nSphEEo1OjI"';
 
     const form = document.getElementById('modificarProducto');
+
+    if (!form) {
+        console.error("Formulario con ID 'modificarProducto' no encontrado.");
+        return;
+    }
 
     function getQueryParam(param) {
         const urlParams = new URLSearchParams(window.location.search);
@@ -26,16 +31,17 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function validarFormulario() {
-    const nombre = document.getElementById('nombre').value.trim();
-    const marca = document.getElementById('marca').value.trim();
-    const modelo = document.getElementById('modelo').value.trim();
-    const color = document.getElementById('color').value.trim();
-    const unidades = document.getElementById('unidades').value.trim();
-    const precio = document.getElementById('precio').value.trim();
-    const categoria = document.getElementById('categoria').value.trim();
-    const proveedor = document.getElementById('proveedor').value.trim();
-
-    return nombre && marca && modelo && color && unidades && precio && categoria && proveedor;
+    const inputs = ['nombre', 'marca', 'modelo', 'color', 'unidades', 'precio'];
+    return inputs.every(inputId => {
+        const inputElement = document.getElementById(inputId);
+        if (inputElement) {
+            const value = inputElement.value.trim();
+            return !!value; // Verifica si el valor no está vacío
+        } else {
+            console.error(`Elemento con ID ${inputId} no encontrado.`);
+            return false;
+        }
+    });
 }
 
 function cargarProducto(id, token) {
@@ -45,40 +51,58 @@ function cargarProducto(id, token) {
             'Authorization': `Bearer ${token}`
         }
     })
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById('nombre').value = data.nombrearticulo;
-        document.getElementById('marca').value = data.marca;
-        document.getElementById('modelo').value = data.modelo;
-        document.getElementById('color').value = data.color;
-        document.getElementById('unidades').value = data.unidadesdisponibles;
-        document.getElementById('precio').value = data.valorunitario;
-        document.getElementById('categoria').value = data.categoria;
-        document.getElementById('proveedor').value = data.proveedor;
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error al cargar los datos del producto.');
+        }
+        return response.json();
     })
-    .catch(error => console.error('Error al cargar los datos del producto:', error));
+    .then(data => {
+        const fields = [
+            { id: 'nombre', value: data.nombrearticulo },
+            { id: 'marca', value: data.marca },
+            { id: 'modelo', value: data.modelo },
+            { id: 'color', value: data.color },
+            { id: 'unidades', value: data.unidadesdisponibles },
+            { id: 'precio', value: data.valorunitario }
+        ];
+
+        fields.forEach(field => {
+            const element = document.getElementById(field.id);
+            if (element) {
+                element.value = field.value;
+            } else {
+                console.error(`Elemento con ID ${field.id} no encontrado.`);
+            }
+        });
+    })
+    .catch(error => {
+        console.error('Error al cargar los datos del producto:', error);
+        alert('Error al cargar los datos del producto. Por favor, inténtelo de nuevo.');
+    });
 }
 
-
-
-
-
 function actualizarProducto(id, token) {
+    const nombre = document.getElementById('nombre').value;
+    const marca = document.getElementById('marca').value;
+    const modelo = document.getElementById('modelo').value;
+    const color = document.getElementById('color').value;
+    const unidades = document.getElementById('unidades').value;
+    const precio = document.getElementById('precio').value;
+
     const productoActualizado = {
-        id: id, 
-        nombrearticulo: document.getElementById('nombre').value,
-        marca: document.getElementById('marca').value,
-        modelo: document.getElementById('modelo').value,
-        color: document.getElementById('color').value,
-        unidadesdisponibles: parseInt(document.getElementById('unidades').value),
-        valorunitario: parseFloat(document.getElementById('precio').value),
-        categoria: document.getElementById('categoria').value,
-        proveedor: document.getElementById('proveedor').value
+        articulo: {
+            nombrearticulo: nombre,
+            marca: marca,
+            modelo: modelo,
+            color: color,
+            unidadesdisponibles: parseInt(unidades),
+            valorunitario: parseFloat(precio)
+        },
+        idCategoria: 2
     };
 
-    console.log("Datos del producto a actualizar:", productoActualizado);
-
-    fetch(`http://localhost:3300/api/articulos/actualizarArticulo`, {
+    fetch(`http://localhost:3300/api/articulos/actualizarArticulo/${id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -89,7 +113,7 @@ function actualizarProducto(id, token) {
     .then(response => {
         if (response.ok) {
             alert('Producto actualizado correctamente');
-            window.location.href = 'modificarProducto.html';
+            window.location.href = 'inventario.html';
         } else {
             return response.text().then(text => { throw new Error(text) });
         }
@@ -99,4 +123,3 @@ function actualizarProducto(id, token) {
         alert('Error al actualizar el producto: ' + error.message);
     });
 }
-

@@ -45,7 +45,7 @@
                         <span class="tittle">Facturación</span>
                     </a>
                 </li>
-                <li class="hovered">
+                <li>
                     <a href="inventario.html">
                         <span class="icon">
                             <ion-icon name="cube-outline"></ion-icon>
@@ -53,7 +53,7 @@
                         <span class="tittle">Inventario</span>
                     </a>
                 </li>
-                <li>
+                <li class="hovered">
                     <a href="compras.html">
                         <span class="icon">
                             <ion-icon name="cash-outline"></ion-icon>
@@ -99,53 +99,84 @@
             </div>
         </div>
 
-        <!--====================INVENTARIO======================-->
+        <!--====================COMPRAS======================-->
 
-        <div class="detailsForm">
-            <div class="recentOrders">
+        <div class="details" style="display: flex; justify-content: space-between;">
+            <div class="recentOrders" style="flex: 1; margin-right: 20px;">
                 <div class="cardHeader">
-                    <h2>Modificar producto</h2>
+                    <h2>Por confirmar</h2>
                 </div>
-                <form id="modificarProducto">
-                    <div class="form-row">
-                        <div class="form-group col">
-                            <label for="nombre">Nombre del producto</label>
-                            <input type="text" id="nombre" name="nombre" required>
-                        </div>
-                        <div class="form-group col">
-                            <label for="marca">Marca</label>
-                            <input type="text" id="marca" name="marca" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col">
-                            <label for="modelo">Modelo</label>
-                            <input type="text" id="modelo" name="modelo" required>
-                        </div>
-                        <div class="form-group col">
-                            <label for="color">Color</label>
-                            <input type="text" id="color" name="color" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col">
-                            <label for="unidades">Unidades compradas</label>
-                            <input type="number" id="unidades" name="unidades" required>
-                        </div>
-                        <div class="form-group col">
-                            <label for="precio">Precio de venta unidad</label>
-                            <input type="number" id="precio" name="precio" required>
-                        </div>
-                    </div>
-                    
-                    <div class="button">
-                        <button type="submit" class="btn">Modificar producto</button>
-                    </div>
-                </form>
+                <table id="tablaCompras1">
+                    <thead>
+                        <tr>
+                            <th>IdCompra</th>
+                            <th>IdArticulo</th>
+                            <th>Nombre</th>
+                            <th>Unidades</th>
+                            <th>Valor Unidad</th>
+                            <th>Valor Total</th>
+                            <th>Fecha</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
             </div>
         </div>
+        
+        <div class="details" style="display: flex; justify-content: space-between;">
+            <div class="recentOrders" style="flex: 1; margin-right: 20px;">
+                <div class="cardHeader">
+                    <h2>Comprados</h2>
+                </div>
+                <table id="tablaCompras2">
+                    <thead>
+                        <tr>
+                            <th>IdCompra</th>
+                            <th>IdArticulo</th>
+                            <th>Nombre</th>
+                            <th>Unidades</th>
+                            <th>Valor Unidad</th>
+                            <th>Valor Total</th>
+                            <th>Fecha</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>            
+        <div class="details" style="display: flex; justify-content: space-between;">
+            <div class="recentOrders" style="flex: 1; margin-right: 20px;">
+                <div class="cardHeader">
+                    <h2>Reversadas</h2>
+                </div>
+                <table id="tablaCompras3">
+                    <thead>
+                        <tr>
+                            <th>IdCompra</th>
+                            <th>IdArticulo</th>
+                            <th>Nombre</th>
+                            <th>Unidades</th>
+                            <th>Valor Unidad</th>
+                            <th>Valor Total</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
     </div>
-    <script src="./assets/js/modificarProducto.js"></script>
+
+    <script src="./assets/js/leerCompras.js"></script>
+    <!--====================SCRIPTS======================-->
+    <script src="./assets/js/main.js"></script>
+
     <!--====================IONICONS======================-->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
