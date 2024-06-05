@@ -49,42 +49,6 @@ function insertarProducto(event) {
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${token}`
                     },
-<<<<<<< HEAD
-                    "unidadesCompradas": unidades,
-                    "valorUnidad": precio,
-                    "idCategoria": 1,
-                    "estado": 1
-                }
-            ],
-            "idProveedor": 1,
-            "idUsuario": 1
-        };
-
-        fetch('http://localhost:3300/api/compras/registrarCompra', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify(datosCompra)
-        })
-        .then(response => {
-            if (!response.ok) {
-                return response.text().then(text => { throw new Error(text) }); 
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Producto insertado:', data);
-            alert('Producto insertado correctamente.');
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('Error al insertar producto: ' + error.message);
-        });
-    } else {
-        alert('Inserción de producto cancelada.');
-=======
                     body: jsonBody
                 })
                 .then(response => {
@@ -110,8 +74,7 @@ function insertarProducto(event) {
         } else {
             alert('Inserción de producto cancelada.');
         }
->>>>>>> Laura
     }
 
     document.getElementById('btnInsertarProducto').addEventListener('click', insertarProducto);
-});
+
