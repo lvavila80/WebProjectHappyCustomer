@@ -13,14 +13,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 passwd: passwordInput.value
             };
 
-            fetch('http://localhost:3200/api/usuarios/authUsuario', { // Cambiar localhost por la dirección correcta si es necesario
+            fetch('http://localhost:3200/api/usuarios/authUsuario', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(loginData)
             })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Respuesta del servidor no fue exitosa: ' + response.statusText);
+                }
+                return response.json();
+            })
             .then(data => {
                 if (data.success) {
                     console.log('Autenticación exitosa:', data.message);
@@ -28,13 +33,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 } else {
                     console.log('Error en autenticación:', data.message);
                     errorMessageDiv.textContent = data.message;
-                    errorMessageDiv.style.display = 'block'; // Asegúrate de que el mensaje se muestre
+                    errorMessageDiv.style.display = 'block';
                 }
             })
             .catch(error => {
                 console.error('Error durante la autenticación:', error);
-                errorMessageDiv.textContent = 'Error al procesar la solicitud.';
-                errorMessageDiv.style.display = 'block'; // Asegúrate de que el mensaje se muestre
+                errorMessageDiv.textContent = 'Error al procesar la solicitud. Intente de nuevo más tarde.';
+                errorMessageDiv.style.display = 'block';
             });
         });
     }
@@ -42,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (recoverAccountButton) {
         recoverAccountButton.addEventListener('click', function() {
             window.location.href = 'rehabilitarUsuario.html';
-       
         });
     }
 });
