@@ -109,27 +109,48 @@
 
         <!--====================REPORTES======================-->
 
-        <div class="details">
-            <div class="recentOrders">
-                <div class="cardHeader">
-                    <h2>Reporte</h2>
+        <div class="report-container">
+            <div class="report-section">
+                <div class="report-header">
+                    <h2>Reporte de Productos</h2>
                 </div>
-
-
-                <!--====================AQUIIIIIII======================-->
-
-
-                <!--====================AQUIIIIIII======================-->
-
-
+                <table id="reportTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Datos de la tabla aquí -->
+                    </tbody>
+                </table>
             </div>
-        </div>    
-    </div>
+            
+            <div class="report-header">
+                <h2>Reporte Gráfico</h2>
+                <canvas id="myChart"></canvas>
+            </div>
+            
+            <div class="report-header">
+                <h2>Reporte Gráfico de Precios</h2>
+                <canvas id="priceChart"></canvas>
+            </div>
+            
+            <button id="reportes" onclick="generatePDF()">Generar PDF</button>
+        </div>
+        
 
 
     <!--====================SCRIPTS======================-->
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/logout.js"></script>
+    <script src="./assets/js/reportes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
     <!--====================IONICONS======================-->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

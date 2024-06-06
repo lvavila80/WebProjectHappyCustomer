@@ -62,7 +62,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="reportes.html">
                         <span class="icon">
                             <ion-icon name="bar-chart-outline"></ion-icon>
                         </span>
@@ -84,8 +84,7 @@
                         </span>
                         <span class="tittle">Salir</span>
                     </a>
-                </li>
-               
+                </li>               
             </ul>
         </div>
     </div>
@@ -157,69 +156,21 @@
         <div class="details">
             <div class="recentOrders">
                 <div class="cardHeader">
-                    <h2>Ordenes recientes</h2>
-                    <a href="reportes.html" class="btn">Ver todo</a>
+                    <h2>Ventas recientes</h2>
+                    <a href="venta.html" class="btn">Ver todo</a>
                 </div>
 
-                <table>
+                <table id="tablaVentas2">
                     <thead>
                         <tr>
-                            <td>Nombre</td>
-                            <td>Precio</td>
-                            <td>Pago</td>
-                            <td>Estado</td>
+                            <th>IdVenta</th>
+                            <th>IdArticulo</th>
+                            <th>Unidades</th>
+                            <th>Valor Total</th>
+                            <th>Fecha</th>
                         </tr>
                     </thead>
-
                     <tbody>
-                        <tr>
-                            <td>Refrigerador</td>
-                            <td>$1200</td>
-                            <td>Realizado</td>
-                            <td><span class="status delivered">Entregado</span></td>
-                        </tr>
-                        <tr>
-                            <td>Dell laptop</td>
-                            <td>$120</td>
-                            <td>Pendiente</td>
-                            <td><span class="status pending">Pendiente</span></td>
-                        </tr>
-                        <tr>
-                            <td>Apple Watch</td>
-                            <td>$1200</td>
-                            <td>Realizado</td>
-                            <td><span class="status return">Devuelto</span></td>
-                        </tr>
-                        <tr>
-                            <td>Addidas shoes</td>
-                            <td>$620</td>
-                            <td>Pendiente</td>
-                            <td><span class="status inProgress">En progreso</span></td>
-                        </tr>
-                        <tr>
-                            <td>Refrigerador</td>
-                            <td>$1200</td>
-                            <td>Realizado</td>
-                            <td><span class="status delivered">Entregado</span></td>
-                        </tr>
-                        <tr>
-                            <td>Dell laptop</td>
-                            <td>$120</td>
-                            <td>Pendiente</td>
-                            <td><span class="status pending">Pendiente</span></td>
-                        </tr>
-                        <tr>
-                            <td>Apple Watch</td>
-                            <td>$1200</td>
-                            <td>Realizado</td>
-                            <td><span class="status return">Devuelto</span></td>
-                        </tr>
-                        <tr>
-                            <td>Addidas shoes</td>
-                            <td>$620</td>
-                            <td>Pendiente</td>
-                            <td><span class="status inProgress">En progreso</span></td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -228,71 +179,20 @@
 
             <div class="recentCostumers">
                 <div class="cardHeader">
-                    <h2>Clientes recientes</h2>
+                    <h2>Proveedores recientes</h2>
                 </div>
+                <table id="tablaProveedores">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                <table>
-                    <tr>
-                        <td width="60px">
-                            <div class="imgBX"> 
-                                <img src="./assets/media/customer02.jpg" alt=""></img>
-                            </div>
-                        </td>
-                        <td>
-                            <h4>David <br><span>Italy</span></h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td width="60px">
-                            <div class="imgBX"> 
-                                <img src="./assets/media/customer01.jpg" alt=""></img>
-                            </div>
-                        </td>
-                        <td>
-                            <h4>David <br><span>Italy</span></h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td width="60px">
-                            <div class="imgBX"> 
-                                <img src="./assets/media/customer02.jpg" alt=""></img>
-                            </div>
-                        </td>
-                        <td>
-                            <h4>David <br><span>Italy</span></h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td width="60px">
-                            <div class="imgBX"> 
-                                <img src="./assets/media/customer01.jpg" alt=""></img>
-                            </div>
-                        </td>
-                        <td>
-                            <h4>David <br><span>Italy</span></h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td width="60px">
-                            <div class="imgBX"> 
-                                <img src="./assets/media/customer02.jpg" alt=""></img>
-                            </div>
-                        </td>
-                        <td>
-                            <h4>David <br><span>Italy</span></h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td width="60px">
-                            <div class="imgBX"> 
-                                <img src="./assets/media/customer01.jpg" alt=""></img>
-                            </div>
-                        </td>
-                        <td>
-                            <h4>David <br><span>Italy</span></h4>
-                        </td>
-                    </tr>
+                    </tbody>
                 </table>
+
             </div>
         </div>
     </div>
@@ -301,6 +201,8 @@
     <!--====================SCRIPTS======================-->
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/logout.js"></script>
+    <script src="./assets/js/detalleVentas.js"></script>
+    <script src="./assets/js/leerProveedor.js"></script>
     <!--====================IONICONS======================-->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
