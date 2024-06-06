@@ -2,13 +2,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('recoveryForm');
     const emailInput = document.getElementById('email');
     const messageDiv = document.getElementById('message');
-    const recoverTokenButton = document.getElementById('recoverTokenButton');
-    const registerButton = document.getElementById('registerButton');
 
     form.addEventListener('submit', function (event) {
         event.preventDefault();
-
         const email = emailInput.value;
+
+        // Cambia la URL de acuerdo a tu configuración de servidor y API
         fetch('http://localhost:3200/api/usuarios/correoReestablecerContrasenia', {
             method: 'POST',
             headers: {
@@ -18,26 +17,23 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(response => {
             if (!response.ok) {
-                throw new Error('Respuesta del servidor no fue exitosa: ' + response.statusText);
+                // Si el servidor responde con un código de error, genera un Error
+                throw new Error('No fue posible procesar la solicitud');
             }
             return response.json();
         })
         .then(data => {
-            messageDiv.textContent = data;
+            // Muestra un mensaje de éxito al usuario
+            messageDiv.textContent = "Se envió el token al correo para rehabilitar su usuario";
             messageDiv.style.color = 'green';
+            messageDiv.style.display = 'block';
         })
         .catch(error => {
+            // Maneja errores de conexión o de la respuesta del servidor
             console.error('Error:', error);
-            messageDiv.textContent = error.message || 'Error al procesar la solicitud. Intente de nuevo más tarde.';
+            messageDiv.textContent = error.message;
             messageDiv.style.color = 'red';
+            messageDiv.style.display = 'block';
         });
-    });
-
-    recoverTokenButton.addEventListener('click', function() {
-        window.location.href = 'RehabilitarUsuario.html';
-    });
-
-    registerButton.addEventListener('click', function() {
-        window.location.href = 'RegistroUsuario.html';
     });
 });
