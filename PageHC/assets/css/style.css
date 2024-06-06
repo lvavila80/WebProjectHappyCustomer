@@ -993,8 +993,6 @@ input:valid {
     color: #035C2E; /* Color del texto en hexadecimal */
 }
 
-<<<<<<< HEAD
-=======
 .register-link-container {
     display: flex;
     flex-direction: column;
@@ -1092,7 +1090,6 @@ input:invalid:focus {
 input:valid {
     border: 2px solid #28a745; 
 }
->>>>>>> Laura
 
 
 .sales-summary {
